@@ -1,0 +1,19 @@
+body {
+    padding: 10px;
+    margin: 10px;
+}
+
+h1, h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    padding: 10px;
+}
+
+body {
+    background-color: lavender;
+}
+
+h2 {
+    background-color: rgb(154, 170, 192);
+    color: lavender;
+}
+
