@@ -1,6 +1,10 @@
 body {
-    padding: 10px;
-    margin: 10px;
+    padding: 40px;
+    margin: 40px;
+}
+
+h1 {
+    border-bottom: 2px solid black;
 }
 
 h1, h2 {
@@ -8,12 +12,4 @@ h1, h2 {
     padding: 10px;
 }
 
-body {
-    background-color: lavender;
-}
-
-h2 {
-    background-color: rgb(154, 170, 192);
-    color: lavender;
-}
 
