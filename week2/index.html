@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>WDD 330 portfolio</h1>
+    <h2>Week01</h2>
+    <ul>
+      <li>
+        <a href="week2/events/first_event.html">Week 2 notes/exercises</a> - 
+        Ch2: Programming Basics
+        • The importance of well-commented code
+            ○ Comments are ignored by the language
+            ○ Single line - //
+            ○ Multiple lines = /**/
+        • JavaScript grammar ― expressions, statements, semicolons and whitespace
+            ○ End each statement with a ;
+            ○ Use ASI (automatic semicolon insertion): attempts to place semicolons at the end of each line; error prone; most of the time doesn’t work
+            ○ Write each statement on a new line and end with semicolon
+            ○ Block series is held in {}
+                § Do not need a semicolon at braces
+            ○ Whitespace: used to separate code; use as much as needed so it is neat and easy to read
+        • Primitive data types
+            ○ String
+            ○ Symbol
+            ○ Number
+            ○ Boolean
+            ○ Undefined
+            ○ Null
+            ○ If it isnt one of the things listed above then it is an object
+            ○ Operantd: operation to a value
+            ○ Variables: value stored in memory
+        • Strings ― string literals, string properties and methods
+            ○ Collection of charactes - like letters and symbols
+            ○ \
+                § Can be used to escape special characters in strings like quote marks
+            ○ Properties
+                § Information about the object or value 
+            ○ Methods
+                § Perform an action on the object or value - to change or tell us something about it
+            ○ String dot notation - writing a dot followed by the property you are interest in
+                § Name.length
+                    □ Would tell you how many letters were in the variable assigned to name
+                    □ Allows you to use quotes in a string
+                    □ Can contain line breaks
+            ○ Template literals
+                § Use the backtick `
+        • Declaring and assigning constants and variables
+            ○ Variables have to be declared before use
+                § Use const and let
+                § Const- value cannot be assigned to anything else
+                § Let- value can be reassigned
+            ○ If the variable references a non-primitive data type (array, function or object) then using const will not make it immutable
+                § Underlying data inside the object can change or mutate
+                
+                const name = { value: 'Alexa' }; // an object
+                name.value = 'Siri'; // change the value
+                << 'Siri'
+            ○ Scope: where a constant or variable is accessible by the program
+                § Using const and let to declare variables = block scoped
+                    □ Value only exists in the block they are declared in 
+                § Global scope: any variable declared outside of a blcok
+                    □ Accessible everywhere in the program
+                    □ Not considered good proactice
+                    □ Has the potential to overwrite other values - not good
+                § Local scope: any variable defined inside a block using let or const
+                § Will only be available inside that block
+                § 
+        • Direct assignment and assignment by reference
+            ○ Primitive values will change directly with any changes to the value
+            ○ Non-primitive: done by reference; any changes made will affect all references to that object
+        • Symbols
+            ○ Used to create unique values - avoid name collisions
+            ○ Don’t have a literal form
+            ○ Create them using symbol()
+                § Typeof uniqueID;
+                § <<'symbol'
+        • Numbers ― decimal, hexadecimal, octal, binary and exponent form, Infinity, and NaN
+            ○ Can be integers or floating point numbers (decimals)
+            ○ Can have constructor function
+            ○ If a number starts with 0x - it is a hexadecimal notation
+                § Used for color codes on the web
+            ○ If it starts with zero followed by the letter o - it is octal 
+            ○ If it starts with 0 and followed by the letter b - considered binary notation
+            ○ NaN - not a number
+        • Arithmetic operations such as +, -, *, /, and %
+            ○ ++ will increment value by 1
+                § Points++ will return orginal value then increase it by 1
+                §  ++points will increase the value by 1 then return the new value
+        • Converting between strings and numbers
+            ○ Number methoda: number('32'); <<32
+                § Can do the opposite to make a number into a string
+        • Parsing numbers
+            ○ parseInt() - used to convert a string representation of a numerical value back into a number
+            
+        • Undefined and null
+            ○ Value given to variables that have not been assigned a value
+            ○ Null- no value
+                § Placeholder for JavaScript to say there should be a value but there isn't
+        • Booleans ― truthy and falsy values
+            ○ True and false 
+            ○ Truthy - values that are always tru
+            ○ Falsy- values that are always false
+        • Logical operators ― AND, OR, and NOT
+            ○ Any primitive value or object
+            ○ Results are based no whether the values are considered truthy or falsy
+            ○ !(Logical not)
+                § ! In front of a value will convert it to a boolean and return the opposite value
+                    □ Known as negation
+            ○ &&(logical and)
+                § Have to have this and that
+            ○ || (logical or)
+                § This or that
+                § Only have to satisy one of the rules to work
+                § Only true if any of the operands are true
+                § False if both are false
+            ○ Lazy evaluation
+                § When you only check the minimum number of criteria that needs to be met
+                § The computer will stop evaluating once a result is clear
+            ○ Bitwise operators
+                § Numbers written in binary that have 32 digits made up of just 0 and 1
+                § 5 is written as 00000000000000000000000000000101
+                § Used for low level programming tasks or applications that require a number of on off states
+                § Not used often
+            ○ Bitwise not
+                § ~
+                § Will convert number to a 32 bit integer then change all the 1s to 0s and all the 0s to 1s and return the value
+            ○ Bitwise and
+                § &
+                § Converts both numbers into binary and returns number that in binary has a 1 in each position 
+            ○ Bitwise or
+                § Will convert both numbers into binary and reutrn a number that in binary has a 1 in each position for which the corresponding bits of either operands are 1
+        • Eqaulity
+            ○ Soft - check if answer is correct with ==
+                § Javascript will not take into account the data type and will attempt to coerce the two valuse to the same type when comparing
+            ○ Hard- === returns true if and only if they are the same data types
+            ○ Ineqaulity - != (soft) and !== (hard)
+        • Great than and less than
+            ○ Use > to see if it is greater thand
+        • Typeof - 
+        
+        Chapter Summary
+            ○ Comments are ignored by the program, but make your program easier to read and understand
+            ○ Data types are the basic building blocks of all JavaScript programs.
+            ○ There are six primitive data types: strings, symbols, numbers, Booleans, undefined and null.
+            ○ Non-primitive data types, such as arrays, functions and objects, all have a type of 'object'.
+            ○ Variables point to values stored in memory and are declared using the const or let keywords.
+            ○ Values are assigned to variables using the = operator.
+            ○ Strings and numbers have various properties and methods that provide information about them.
+            ○ Symbols are unique, immutable values.
+            ○ Boolean values are either true or false .
+            ○ There are only seven values that are false in JavaScript and these are known as 'falsy' values.
+            ○ Data types can be converted into other data types.
+            ○ Type coercion is when JavaScript tries to convert a value into another data type in order to perform an operation.
+            ○ Logical operators can be used to check if compound statements are true or false.
+            ○ Values can be compared to see if they are equal, greater than or less than other values.
+        
+        From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/2> 
+        
+        
+        
+    Ch3: Arrays, Logic, and Loops 
+        • Array literals
+            ○ Array - ordered list of values
+            ○ Write inside []
+            ○ Const myArray = [array, values, here];
+            ○ If array is empty - undefined is returned
+            ○ Array literals
+                § Using sqaure brakcets that already contain some initial values
+            ○ To remove - delete operator
+                § Delete avenger [3]; 
+            ○ Destructuring arrays - take values out of an array and present them as individual values
+            ○ Allows you to assign multiple values at the same time using arrays
+        • Adding and removing values from arrays
+            ○ Length property
+                § Avengers.length = 8
+        • Array methods
+            ○ Pop()
+                § To remove the last item of the array
+                § Returns last item of array, but the array no longer contains that item
+            ○ Shift()
+                § Removes first item in the array
+            ○ Push()
+                § Appends a new value to the end of the array
+                § Return value is the new length of the array
+            ○ Unshift()
+                § Appends new item to the beginning of the array
+            ○ Concat()
+                § Used to merge an array with one or more other arrays
+            ○ Join()
+                § Can be used to turn the array into a string
+            ○ Slice()
+                § Creates subarray; chops out a slice of the original array
+                § Non-destructive
+            ○ Splice()
+                § Removes items from an array then inserts new items in their place
+                § Destructive because it changes the values
+            ○ Reverse()
+                § Reverse the order of an array
+            ○ Sort()
+                § Sort the order of an array
+            ○ indexOf()
+                § To find the first occurrence of a value in an array 
+                § If item is there it will return the index of the first occurrence
+            ○ Includes()
+                § Returns a boolean value depending on whether the array contains a particular element or not
+            ○ Multidimensional arrays
+                § Create a coordinate system
+        • Sets
+            ○ Set- data structure that represents a collection of unique values - cannot include duplicates
+            ○ Const list = new Set();
+            ○ Adding values
+                § List.add(a)   <<Set{1}
+            ○ Methods
+                § Values can be found using size()
+                § Has() - check if a value is in a set; will return true or false
+                § Memory leak - occurs when a program retians references to values that can no longer be accessed in its memory 
+                    □ Memory is being used to stor values that are no longer reuqires
+                    □ Cause problems
+        • Maps
+            ○ Keep list of key and value pairs
+            ○ Const romanNumerals = new Map();
+            ○ Set() to add key and value pair
+                § romanNumeral.set(1,'I');
+                << Map {1 => 'I'}
+            ○ Get() - used to look up a value
+        •  if and else statements
+            ○ If - will run only if the condition in the () is true
+                § If it is nota boolean condition, then it will be converted to boolean
+            ○ Else - can be used to add an alternative blcok of code to run it if the condition is false
+            ○ ? - used in place of an if…else statement
+        •  switch statements
+            ○ Good when there are lots of conditions for a test
+            ○ Case keyword is used for each possible value
+        •  while loops
+            ○ Will run a block of code while the condition is true
+            ○ Condition has to be met at some point to avoid getting infinite loops
+        •  do … while loops
+            ○ Condition comes after the block of code
+            ○ Will always run once
+        •  for loops
+            ○ For (initialization; condition; after) {do something}
+            ○ Nested
+                § Loop inside a loop
+                § Inner loop will run all the way through before the next step of the outer loop
+            ○ Can loop over sets, maps and arrays
+        • Iterating over a collection
+    
+    Example
+        Const quiz = [
+            ["what is superman's real name?", "Clark Kent"],
+            ["what is wonder womans real name?", "Diana Prince"].
+            ["what is batman's real name?", "Bruce Wayne"]
+        ];
+        
+        Let score = 0 
+        
+        For(const [question, answer] of quiz) {
+           const response = prompt(question);
+            If(response === answer) {
+                 alert ('Correct!');
+            } else {
+                Alert ('Wrong! The correct answer was ${answer}');
+                }
+        }
+        
+    Chapter Summary
+    • Arrays are an ordered list of values
+    • Multidimensional arrays are arrays that contain other arrays
+    • Arrays have lots of methods that can be used to manipulate items in the array
+    • Sets are new in ES6 and are ordered lists of non-duplicate values
+    • Maps are new in ES6 and are ordered lists of key-value pairs
+    • We can use an if and else statement to control the flow of code
+    • The switch statement can be used instead of multiple if and else statements
+    • A while loop and do ... while loop can be used to repeat a block of code while a condition is still true
+    • A for loop works in a similar way to a while loop, but has a different syntax
+    • A for-of loop can be used to iterate over an array
+    • Sets and maps are enumerable, so can also be looped over using a for-of loop
+    
+    
+    Ch4: Functions
+    • Defining functions―function declarations, function expressions, Function() constructors and the new arrow syntax
+        • Start with declaring function and function name
+        • Function expression
+            ○ Assigns an anonymous function to a variable
+        • Function() constructors
+            ○ Body of the function is entered as a string
+                § Const hi = new Function('console.log("hi world");');
+            ○ Not recommended
+    • Invoking a function
+        • Run the code inside the functions body
+        • Enter its name followed by parentheses 
+            § Hello();
+                □ Hello world
+        •  have to have () to invoke a function
+    • Return values
+        • Return a value using --- return 'howdy world'; 
+    • Parameters and arguments
+        • Represent values provided for the function as an input
+        • Any parameters a function needs are set when the function is defined
+        • When a function is invoked it is provided with arguments
+        • Improved mean function
+            § Will accept any number of values
+            § Collects all the arguments that are entered into an array (values)
+        • Default parameters 
+            § Values that will be used by the function if no parameters are defined
+            § To specify a default, assign the default value to the function definition 
+            § Always put default parameters after other parameters
+        • Arrow functions
+            § =>
+            § Parameters come before /> and main body function comes after
+            § Anonymous
+                □ If you want to refer to them you have to assign them a variable
+                □ Less verbose
+    • Hoisting―variables and functions
+        • Hoisting - action of moving all variable and function declarations to the top of the current scope, regardless of where they are defined
+        • Functions that use function declaration are automatically hoisted
+            § They can be invoked before they have been defined
+        • Variable hoisting 
+            § Variable declarations that use var are automatically moved to the top of the current scope
+            § Variables at the end of a function will be undefined until the assignment is made
+            § Relies on var to declare variables
+    • Callbacks―functions as a parameter
+        • Callback - a function that passed an argument 
+        • Provided as a parameter then invoked inside the body of the function
+        • Sorting arrays 
+            § Use sort() 
+            § Tells how to compare the two values and the callback should return 
+                □ A negative value if a comes before b
+                □ 0 if a and b are equal
+                □ A positive value if a comes after b
+        • forEach() 
+            § Will loop through the array and invoke a callback function using each value as an argument
+        • Map() 
+            § Iterates over an array and takes a callback function as a parameter
+            § It returns a new array that replaces each value with a return value
+        • Reduce()
+            § Cumulatively combines each result to return just a single value
+            § Takes second parameter after the callback 
+        • Filter()
+            § Returns new array that contains items from original array that return true when passed to the callback
+    • Chaining iterators together
+        • Iterator functions return an array which means that another iterator function
+    • Mean() function
+        • Improved version is reduce()
+        • Reduce()
+            § Adds up all values provided 
+        • Can add a callback 
+    
+    Chapter summary
+    • Functions are first-class objects that behave the same way as other values.
+    • Function literals can be defined using the function declaration, or by creating afunction expressionby assigning an anonymous function to a variable.
+    • All functions return a value. If this is not explicitly stated, the function will return undefined.
+    • A parameter is a value that is written in the parentheses of a function declaration and can be used like a variable inside the function’s body.
+    • An argument is a value that is provided to a function when it is invoked.
+    • The arguments variable is an array-like object that allows access to each argument provided to the function using index notation.
+    • The rest operator can be used to access multiple arguments as an array.
+    • Default arguments can be supplied to a function by assigning them to the parameters.
+    • Arrow functions are a new shorthand notation that can used for writing anonymous functions in ES6.
+    • Function declarations can be invoked before they are defined because they are hoisted to the top of the scope, but function expressions cannot be invoked until after they are defined.
+    • A callback is a function that is provided as an argument to another function.
+    
+    
+    
+            <br>
+        <h3>Questions:</h3>
+        <ol>
+          <li>
+            TYPE QUESTIONS HERE
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -4,6 +4,19 @@ body {
     background-color: lavender;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+}
+
 h1 {
     border-bottom: 2px solid black;
 }

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>WDD 330 portfolio</h1>
+    <h2>Week01</h2>
+    <ul>
+      <li>
+        <a href="week4/events/first_event.html">Week 4 notes/exercises</a> - 
+        Forms 
+	• <form> 
+	• Contains input fields, select menus, and buttons
+	• Has an initial value that can be changed
+	• 
+	• Or 
+	• 
+	
+	const form = document.forms[0]; //returns collection from index; returns first and only object
+	
+	const form = document.forms['search']; //name attribute to identfy for
+	
+	const [input,button] = form.elements; //returns elements in the form
+	
+	const input = form.searchInput //access form using name attributes as a property 
+	
+	• Properties and methods
+		○ <button type='submit'>Submit</button> 
+			§ Submits form automatically
+		○ <input type='submit' value='Submit'>
+			§ Submit manually
+		○ <input type='image' src='button.png'>
+		○ <button type='reset'>Reset</button>
+			§ Reset all the form controls back to initial values
+		○ form.action = '/an/other.url'
+			§ Sends to a different URL to be processed
+	• Form events
+		const input = form.elements.searchInput;
+		
+		input.addEventListener('focus', () => alert('focused'), false);
+			§ Occurs when an element is focused on 
+				□ Example: when a cursor is placed inside the element (clicking)
+		○ input.addEventListener('blur', () => alert('blurred'), false);
+			§ Occurs when user moves the focus away from the form element
+		○ input.addEventListener('change', () => alert('changed'), false);
+			§ Occurs after user moves focus away from element after changing it 
+	• Submitting a form
+		○ const form = document.forms['search'];
+		form.addEventListener ('submit', search, false);
+		
+		function search() {
+		    alert(' Form Submitted');
+		}
+			§ Will send content of the form to the server to e processed 
+		○ function search(event) {
+		    alert('Form Submitted');
+		    event.preventDefault();
+		}
+			§ Prevents form from being submitted
+	• Retrieving and changing values from a form
+		○ Value property - used to retrieve text inside field
+			§ Used to report back what was searched for
+			
+			function search(event) {
+			    alert(`You Searched for: ${input.value}`);
+			    event.preventDefault();
+			}
+		○ Deleting text so user can enter their own
+			input.addEventListener('focus', function(){
+			    if (input.value==='Search Here') {
+			        input.value = '' 
+			    }
+			}, false);
+			
+			input.addEventListener('blur', function(){
+			    if(input.value === '') {
+			        input.value = 'Search Here';
+			    } }, false);
+			
+			//default text will disappear when user clicks inside the input field and reappear if user leaves the field blank
+	• Form controls 
+		○ <input>fields, including text, passwords, check boxes, radio buttons, and file uploads
+		○ <select>menus for drop-down lists of options
+		○ <textarea>elements for longer text entry
+		○ <button>elements for submitting and resetting forms
+		
+		From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/8> 
+		
+	• Input fields
+		○ Text
+			§ Used for entering short piece of text (like a username)
+			§ Not required, but reccamended
+		○ Password
+			§  input type = 'password'
+			§ Secret info
+			§ Characters are concealed as they are entered so they're unable to read on screen
+		○ Checkbox
+			§  type = 'checkbox'
+			§ Used to select options that are true or false; can select more than one
+			§ Use a for loop to see what boxes were checked
+				□ Have values of true (was checked) or false (not checked)
+		○ Radio button
+			§  type='radio'
+			§ Only one can be selected as true
+		○ Hidden
+			§  type='hidden'
+			§ Not displayed by the browser but have a value
+			§ Settings or information that the browser already has
+		○ File input
+			§  type='file'
+			§ Used to upload files
+		○ Other input
+			§  number, tel, and color etc…
+		○ Drop down list
+			§ Used to select one or more options from values
+		○ Text areas
+			§ For entering long pieces of text over multiple lines (like a comment or blog post)
+		○ Buttons
+			§ Can do submit or reset
+	• Form validation 
+		○ Checking whether the user has entered information into a form correctly 
+			§ Required field is complete
+			§ Email address is valid
+			§ Number entered is a number
+			§ Password is minimum number of characters
+			
+		
+
+        <br>
+        <h3>Questions:</h3>
+        <ol>
+          <li>
+            In the form, the radial buttons are confusing on which option belongs to which dot. Is there a way to fix that with css?
+          </li>
+		  <li>
+			What is a prototype in javascript
+		  </li>
+		  <li>What is the definition of a prototype chain</li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>

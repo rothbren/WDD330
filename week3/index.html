@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>WDD 330 portfolio</h1>
+    <h2>Week01</h2>
+    <ul>
+      <li>
+        <a href="week3/events/first_event.html">Week 3 notes/exercises</a> - 
+        Javascript basics
+	• Objects - created to represent entities of the real world 
+		○ Example - users, orders
+		○ Let user = {name: "john", age:30};
+		○ A user can act or select something and make something happen
+			§ Add to a shopping cart or log out
+		○ Method-a function that is a property of an object
+			§ Object oriented programming (OOP) - write code using objects to represent entities
+			§  this
+				□ Used to call the method
+				□ Let user = {
+					Name: "john",
+					Age: 30,
+					
+					sayHi() {
+						//"this" is the "current object"
+						Alert(this.name)
+					}
+				};
+				User.sayHi(); //john 
+			§ "this" is not bound
+				□ Can be used in any function
+				□ Can alert without an object but it will be undefined
+				□ Arrow functions have no this
+	• Summary
+		○ Functions are stored in object properties called methods
+		○ Methods allow objects to act like an object.doSomething()
+		○ Methods can reference the object 'this'
+		○ Value of 'this' is defined at run-time
+			§ When function is declared, it can use 'this' but this has no value until the function is called
+			§ Function can be copied between objects
+			§ Function is called in the method syntax, object.method(); the value of this during the call is object
+				
+This in JavaScript
+https://zellwk.com/blog/es6/#arrow-functions
+https://zellwk.com/blog/this/
+	• "this"
+		○ Keyword whose value changes depending on how a function gets called
+		○ 6 different ways to call
+			§ Global context, object construction, object method, simple function, arrow function, event listener
+		○ Global context
+			§ Defaults to the window object in the browser when called outside any function
+		○ Object construction
+			§ When you create an object with the "new" keyword, "this" refers to the instance
+		○ Object method
+			§ Functions that are associated with an object
+			§ This within any method refers to the object itself
+		○ Simple function
+			§ Function hello() {
+				//say hello!
+			}
+		○ Arrow function
+			§ Always the same as "this"
+			§ Context stays as the object
+			§ Leave function out of the declaration
+			§ Create them directly as an argument
+			§ Add =>
+			§ It can change the number of arguments required and whether you like an implicit return
+			§ Number of arguments
+				□ One argument - you can remove the () 
+				□ No arguments - you can substitute the () for _
+			§ Implicit return
+				□ Automatically create a return keyword if the code is only on one line and not enclosed in a block
+		○ Event listeners
+			§ Set to the element that fired the event in an event listener
+			§ To remove- the callback is passed as the second value needs to be named a function
+			§ Value of this is called by the function that calls it
+			§ Every function defines its own this value
+			§ Fat arrow functions never gets bound to a new value
+				□ This will always be the same value 
+			§ Never want to use arrow functions to declare object methods
+				□ Cant reference the object 
+				□ May not want to use because it creates even listeners because this no longer bind the the element you attached your event listen to 
+		○ Bind
+			§ Allows you to change the 'this' context
+			§ Takes any number of arguments and returns the bound function
+				function sayThis () { console.log(this) } const boundFunc = sayThis.bind(/* arguments...*/)
+				
+				From <https://zellwk.com/blog/this/> 
+				
+			§ Doesn’t work with arrow functions
+	• Default parameters
+		○ Can add a = whenever we define parameter
+			§ Automatically defaults to that value when the parameter is undefined
+	• De-structuring 
+		○ Way to get values out of arrays and objects
+		○ Minor differences between array and objects
+		○ Can create and assign variables with single line of code
+			let { firstName, lastName } = Zell console.log(firstName) // Zell console.log(lastName) // Liew
+		○ {} while declaring variables 
+		○ If variable name is already used, cannot declare variable again
+			§ Can rename variables while destructing with a colon :
+			let { name: courseName } = course console.log(courseName) // JS Fundamentals for Frontend Developers // What ES6 does under the hood: let courseName = course.name
+		○ Will return undefined if you try to destructor a variable that’s not contained within an object
+		○ Can write default parameters for de-structured variables 
+	• Destructuring arrays
+		○ [] 
+		○ Destructure
+			§ Your first variable is the first item in the array
+			§ Second variable is the second item in the array 
+			§ Etc…
+			let [one, two] = [1, 2, 3, 4, 5] console.log(one) // 1 console.log(two) // 2
+		○ Extra variables will be undefined
+			let [one, two, three] = [1, 2] console.log(one) // 1 console.log(two) // 2 console.log(three) // undefined
+			
+			From <https://zellwk.com/blog/es6/#arrow-functions> 
+		○ Rest operator - console.log(rest) will show the rest of the array
+	• Swapping variables with destructured arrays
+		○ Inside of []
+	• Destructuring arrays and objects while declaring functions
+	• Rest parameter and spread operator 
+		○ Signified with three dots
+		○ Rest
+			§ Take the rest of the stuff and pack it array into an array
+			§ Converts a comma separated list of arguments into an array
+			§ Can pack away the rest of the scores
+			§ REST PARAMETER PACKS EVERYTHING INTO AN ARRAY
+		○ Spread
+			§ TAKES AN ARRAY AND SPREADS IT INTO A COMMA SEPARATED LIST OF ARGUMENTS
+			§ Used to concatenate 
+		○ Enhanced object literals
+			§ Property value shorthands, method shorthands, ability to use computed property names
+			§ Property value shorthands
+				□ Can write only variable if your variable name matches your property name 
+			§ Methods shorthands
+				□ Can remove :function from method declaration and it will work like it used to
+			§ Computed object property names
+	• To create template literal, enclose strings with backticks
+		○ Gain access to a special placeholder ${} 
+	• Tags 
+		○ Tags are functions that allow you manipulate the template literal
+		
+	• Summary
+		○ This - crucial keyword
+			§ Appears in frameworks 
+			§ 6 different ways to use this
+
+Chapter 5 - objects
+	• Object literals 
+		○ Object: self-contained set of related values and functions
+			§ Act as collection of named properties 
+			§ When you look up a property name and see a value
+			§ Used to keep related info and functionality together 
+			§ Object literal: an object that is created directly in the language by wrapping all its properties and methods in {}
+				□ Allow objects to be created quickly without need for defining class
+			§ Creating objects
+				□ Enter {}
+				□  const spiderman = {} or const spiderman = new object();
+				□ 2nd method is not recamended 
+		○ Method: when a property's value is a function
+		○ Accessing properties 
+			§ Can access using dot notation
+				□ Superman.name
+				<<'Superman'
+			§ Bracket notation
+				□  superman['name']
+				<< 'Superman'
+		○ Computed properties
+			§ javaScript code can be placed inside [ ] and property key will be the return value
+		○ Calling methods
+			§ Can use dot or bracket notation 
+			§ Same as invoking a function
+			§ Place () after name
+				□ Superman['fly']()
+			§ Use in operator to see if object has a particular property
+				□ 'city' in superman;
+			§ See if its undefined 
+				□ Superman.city !== undefined;
+					<< false
+			§ .hasOwnProperty(thing you are testing)
+				□ To see if its has its own property and did not inherit it from another object
+		○ Finding properties 
+			§ For in loop
+				□ For(const key in superman) { 
+					Console.log(key + ": " + superman[key]); 
+			§ Object.keys()
+				□ Will return an array of all the keys of any object that is provided as an argument
+			§ Object.values()
+				□ Returns an array of all the objects values
+		○ Adding properties
+			§ Assign the value to a new property 
+		○ Changing properties 
+			§ Use assignment
+			§ Superman['real name'] = 'Kal-El';
+		○ Remove properties 
+			§ Delete operator 
+		○ Objects are assignment by reference
+	• Objects as parameters to functions
+		○ Object literal can be passed as a parameter to a function
+		○ Named parameters
+			§ Used when a function has a large amount of optional parameters
+	• This
+		○ Refers to the object that it is within
+		○ Can be used to access objects properties 
+	• Namespacing
+		○ Object literal pattern
+			§ Create an object literal that serves as the namespace and then adding any values as properties of that object
+	• JSON
+		○ Property names must be double quoted 
+		○ Permitted values are double quoted string, numbers, true, false, null, arrays, and objects
+		○ Functions are not permitted values
+		
+		const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'
+		
+		From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/5> 
+		
+		○ Parse()
+			§ Takes a string of data and returns object
+		○ Stringify()
+			§ Takes a object and returns a string
+	• Math object
+		○ Immutable and unable to change
+		
+		Math.PI // The ratio of the circumference and diameter of a circle
+		<< 3.141592653589793
+		
+		Math.SQRT2 // The square root of 2
+		<< 1.4142135623730951
+		
+		Math.SQRT1_2 // The reciprocal of the square root of 2
+		<< 0.7071067811865476
+		
+		Math.E // Euler's constant
+		<< 2.718281828459045
+		
+		Math.LN2 // The natural logarithm of 2
+		<< 0.6931471805599453
+		
+		Math.LN10 // The natural logarithm of 10
+		<< 2.302585092994046
+		
+		Math.LOG2E // Log base 2 of Euler's constant
+		<< 1.4426950408889634
+		
+		Math.LOG10E // Log base 10 of Euler's constant
+		<< 0.4342944819032518
+		
+		From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/5> 
+		
+		○ Absolute value - Math.abs() 
+			§  math.abs(3) >>>>>>> 3
+		○ Rounding numbers - math.ceil()
+		○ Powers and roots
+			§ Math.exp(), Math.pow(), Math.sqrt(), Math.cbrt() cuberoot
+	• Date object
+		○ Info about date and time
+		○  const today = new Date( );
+			Today.toString( );
+			
+			>> 'Tue Feb 14 2017 16:35:18 GMT+0000 (GMT)'
+		○ Getter method
+			§ Return info about date object like month or year
+			§ Getday()
+		○ Setter methods
+			§ Can be used to change value of the date held in a Date object
+	• RegExp object
+		○  const pattern = /[a-zA -Z]+ing$/; or  const pattern = new RegExp('[a-zA -Z]+ing');
+		○  const pattern = /JavaScript/;
+		○ \^ negates the sequence 
+			§ /[^A-Z]/ means not a capital letter
+		○ Properties
+			§ Global property makes the pattern return all matches 
+				□ Pattern only looks for first occurrence of match
+				□  g
+			§ ignoreCase property makes pattern case insensitive 
+				□ Default case sensitive
+				□  i
+			§ Multiline makes pattern multiline 
+				□ Default pattern will stop at end of line
+				□  m
+			§ Examples
+				□  pattern = /java/I >>>>>that means it is making it case insensitive
+	• Metacharacters 
+		○  . matches any character, except line breaks
+		○  \w matches any word character, and is equivalent to [A-Za-z0-9_]
+		○  \W matches any non-word character, and is equivalent to [\^A-Za-z0-9_]
+		○  \d matches any digit character, and is equivalent to [0-9]
+		○  \D matches any non-digit character, and is equivalent to [^0-9]
+		○  \s matches any whitespace character, and is equivalent to [ \t\r\n\f]
+		○  \S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f]
+		
+		From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/5> 
+		
+	• Modifiers
+			§ Greedy - means they will match the longest possible string 
+		○  ? makes the preceding token in the regular expression optional
+		○  * matches one or more occurrences of the preceding token
+		○  + matches one or more occurrences of the preceding token
+		○  {n} matchesnoccurrences of the preceding token
+		○  {n,} matches at leastnoccurrences of the pattern
+		○  {,m} matches at mostmoccurrences of the preceding token
+		○  {n,m} matches at leastnand at mostmoccurrences of the preceding token
+		○  ^ marks the position immediately before the first character in the string
+		○  $ marks the position immediately after the last character in the string
+		
+		From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/5> 
+	• SUMMARY
+		○ Object - collection of key value pairs placed inside curly braces { }
+			§ Have properties that can be any JavaScript value
+			§ If it’s a function it is a method
+			§ Properties can be accessed using dot or square notation
+			§ Mutable - properties and methods can be changed or removed
+			§ Can be used as parameters to functions - allows arugments to be entered in any order or omitted
+		○ JSON
+			§ Portable data 
+		○ Math object - gives access to math constants
+			§ Used to perform math calculations
+		○ Date - used to create dates
+			§ Getter method to access info about the date
+			§ Setter method to change info about the date
+		○ Regex used to create regular expressions 
+			
+	
+        <br>
+        <h3>Questions:</h3>
+        <ol>
+          <li>
+            TYPE QUESTIONS HERE
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>
