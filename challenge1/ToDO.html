@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Challenge 1</title>
+        <link rel="stylesheet" href="ToDo.css"/>
+
+    </head>
+
+    <body>
+        <h1>To Do</h1>
+       
+        <ul id="myList" class="myList">
+            <li class="item">Go to Target for groceries</li>
+            <li class="item checked">Pay Chase credit card</li>
+            <li class="item">Buy B's birthday present</li>
+            <li class="item">Finish WDD homework -- due Saturday 10/23</li>
+        </ul>
+
+        <div class="sort">
+            <div class="tasksLeft"><span id="tasksLeft">3</span> Tasks Left</div>
+            <div class="options"><p onclick="showAll()" id="all">All</p></div>
+            <div class="options"><p onclick="active()" id="active">Active</p></div>
+            <div class="options"><p  onclick="complete()" id="completed">Completed</p></div>
+        </div>
+
+            
+        
+
+        <div id="addToList" class="addToList">
+                <input type="text" id="myInput" placeholder="Start typing here...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+    <script src="ToDo.js"></script>
+    </body>
+</html>

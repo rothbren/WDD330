@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>WDD 330 portfolio</h1>
+    <h2>Week05</h2>
+   <div>
+    Testing and debugging
+    Errors, exceptions, and warnings
+        • Errors can be caused by:
+            ○ System error - problem with system or external device
+            ○ Programmer error - incorrect syntax or faulty logic, typos
+            ○ User error - when user enters data incorrectly 
+        • Exceptions
+            ○ Exception: an error that produces a return value that can then be used by the program to deal with an error 
+            ○ Example: trying to call something that is not there
+            ○ Stack traces
+                § Sequence of functions or method calls that lead to the point where the error occurred
+                § Will work backwards from the point at which the error occurred to identify the original function or method
+        • Warnings
+            ○ Occur when there is an error in the code, but doesn’t cause code to crash
+        • Importance of testing and debugging 
+            ○ Javascript alerts errors instead of shutting down the program
+            ○ Strict mode - produces exceptions and warnings 
+            ○ Considers coding practices that were previously accepted as poor styling 
+            ○ Increases the chance of errors, but it makes it easy to spot errors early on
+            ○ Write this in the JavaScript file: 'use strict';
+            ○ If strict mode is not supported, it will just be ignored
+            ○ Can invoke strict mode to place all code in self invoking function
+            
+            (function() {
+                'use strict';
+            
+                // All your code would go inside this function
+            
+            }());
+        • Linting tools
+            ○ Linting tools - JS link, JS hint, and ES lint
+            ○ Used to test quality of JavaScript
+            ○ Highlight sloppy code
+            ○ Unforgiving 
+            ○ Good for working as a team so everyone follows the same conventions
+            ○ There is a plugin -- will highlight sloppy code and you type
+            ○ Creates consistency
+        • Feature detection 
+            ○ Some browsers support things that others don’t 
+            ○ Use if statement to check whether an object or method exists before trying to call the method
+            
+            if (window.holoDeck) {
+                virtualReality.activate();
+            }
+            ○ Ensures no error occurs if the browser doesn’t support the method
+            ○ Modernizer - offers easy way to implement feature detection
+        • Debugging in the browser
+            ○ Find where the bug is and fix it
+            ○ Sometimes where the error occurred is not where the problem is
+            ○ Use breakpoints to halt the program and run one thing at a time
+            ○ alert()
+                § Show a dialog at certain points in the code
+            ○ Console 
+                § Provides a number of methods for logging info and debugging
+                §  console.log()  
+            ○ Debugging tools
+                § Allow you to set breakpoints
+                § Debugger  key word
+            ○ Error objects
+                § Created by host environment when exception occurs
+                §  const error = new Error()
+            ○ Errors
+                § EvalErroris not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the globaleval()function.
+                § RangeErroris thrown when a number is outside an allowable range of values.
+                § ReferenceErroris thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.
+                § SyntaxErroris thrown when there’s an error in the code’s syntax.
+                § TypeErroris thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.
+                § URIErroris thrown when there’s a problem encoding or decoding the URI.
+                § InternalErroris a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.
+                
+                From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/10> 
+                
+            ○ Throwing exceptions
+                §  throw - will allow for any problems in your code to be highlighted and dealt with
+                § Can be applied to any JavaScript expression
+                    □ Causes the execution of the program to stop
+        • Exception handling
+            ○ Program terminates with an error message when exception occurs 
+            ○ Allows us to identify and fix erros
+            ○ Try, catch, and finally
+                § Try - will run the code inside the block as normal
+                    □ If exception occurs it will pass the error that is thrown onto a catch block
+                § Catch - will run if an exception is thrown inside the try blcok
+                    □ Allows us to query the error name, message, and properties 
+                § Finally - can be added after a catch block
+                    □ Will always be executed after try or catch
+                    □ Will run whether or not exception occurred
+        • Tests
+            ○ Test early means identifying errors early
+            ○ Test Driven Development (TDD) - process of writing tests before actual code
+                § Tests will fail when there is no code to test
+                § Continual tests with each stage
+            ○ Work flow
+                § Write tests
+                § Write code to pass the tests
+                § Refactor the code
+                § Test refactored code
+                § Write more tests for new features
+            ○ Testing frameworks
+                § Provide a structure to write meaningful tests and then run them
+                § Jest
+                    □ Framework created by facebook
+                    □ Makes it easy to cerate and run tests
+                    □ Install jest
+                        ®  in command terminal type: npm intall -g jest
+    Chapter Summary
+            ○ Bugs are unavoidable in code, and it’s best to find them early rather than later.
+            ○ JavaScript can be put into strict mode using the string"use strict". This can be used in a whole file or just a single function.
+            ○ Linting tools can be used to ensure your code follows good practice and conventions.
+            ○ Feature detection can check whether a method is supported before calling it, helping to avoid an exception being thrown.
+            ○ The console and browser’s built-in debugging tool can be used to interactively find and fix bugs in code.
+            ○ Exceptions can be thrown using thethrowstatement.
+            ○ An error object is created when an exception occurs.
+            ○ Any code placed inside atryblock will pass any error objects to acatchblock when an exception occurs. Any code inside afinallyblock will run if an exception does or does not occur.
+            ○ Test-driven development is the practice of writing tests that fail, then writing the code that passes the test, then refactoring the code every time a new feature is implemented.
+            ○ The Jest framework can be used to test your code
+            
+            
+    
+   </div>
+
+        <br>
+        <h3>Questions:</h3>
+        <ol>
+          <li>
+            In the form, the radial buttons are confusing on which option belongs to which dot. Is there a way to fix that with css?
+          </li>
+		  <li>
+			What is a prototype in javascript
+		  </li>
+		  <li>What is the definition of a prototype chain</li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>
