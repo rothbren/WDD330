@@ -46,7 +46,7 @@ var x=0;
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
-  localStorage.setItem("listItem"+x, inputValue);
+  localStorage.setItem(Date.now(), inputValue);
   console.log(localStorage);
   var t = document.createTextNode(inputValue);
   var oldTasksNum = Number(document.getElementById("tasksLeft").innerHTML);
