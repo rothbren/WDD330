@@ -42,9 +42,12 @@ var oldTasksNum = Number(document.getElementById("tasksLeft").innerHTML);
 }, false);
 
 //Add button
+var x=0;
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
+  localStorage.setItem("listItem"+x, inputValue);
+  console.log(localStorage);
   var t = document.createTextNode(inputValue);
   var oldTasksNum = Number(document.getElementById("tasksLeft").innerHTML);
   document.getElementById("tasksLeft").innerHTML = oldTasksNum + 1;
@@ -70,7 +73,9 @@ function newElement() {
       div.style.display = "none";
     }
   }
+  x+=1;
 }
+
 
 //filtering
 function complete() {
@@ -101,4 +106,5 @@ function showAll() {
     document.getElementsByClassName("item")[x].style.display="block";
   }
 }
+
 
