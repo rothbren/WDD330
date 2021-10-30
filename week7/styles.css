@@ -1,18 +1,8 @@
+
 body {
     padding: 40px;
     margin: 40px;
     background-color: lavender;
-}
-
-a {
-    color: black;
-}
-
-a:hover {
-    background-color: purple;
-    color: white;
-    text-decoration: underline;
-    padding: 3px;
 }
 
 h1 {
@@ -36,4 +26,24 @@ footer {
     background-color: rgb(187, 187, 207);
 }
 
+.allFiles {
+    padding: 10px;
+    width: 25%;
+    background: #3d467a;
+    color: white;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .allFiles:hover {
+    background-color: white;
+    color: #3d467a;
+  }
 
+  a {
+      text-decoration: none;
+  }

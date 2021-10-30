@@ -1,30 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WDD 330 portfolio</title>
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
     <h1>WDD 330 portfolio</h1>
     <h2>Week07</h2>
-   <div>
-    
-   </div>
-
-        <br>
+    <div>
         <h3>Questions:</h3>
         <ol>
-          <li>
-            In the form, the radial buttons are confusing on which option belongs to which dot. Is there a way to fix that with css?
-          </li>
-		  <li>
-			What is a prototype in javascript
-		  </li>
-		  <li>What is the definition of a prototype chain</li>
+            <li>
+                In the form, the radial buttons are confusing on which option belongs to which dot. Is there a way to
+                fix that with css?
+            </li>
+            <li>
+                What is a prototype in javascript
+            </li>
+            <li>What is the definition of a prototype chain</li>
+            <li>Is there more than one way to write localStorage? If yes, what is best practice?</li>
         </ol>
-      </li>
-    </ul>
-  </body>
-</html>
+
+        <h3>Notes:</h3>
+
+        <p>
+            Further Functions
+            • Function properties and methods
+                • Functions are first class - can have properties and methods
+                • Call() and apply()
+                    ○  call() - can be used to set the value of this inside a function to an object that is provided as the first argument
+                        const clark = { name: 'Clark' };
+                        const bruce = { name: 'Bruce' };
+                        
+                        sayHello.call(clark);
+                        << 'Hello, my name is Clarke'
+                        
+                        sayHello.call(bruce);
+                        << 'Hello, my name is Bruce'
+                        
+                        Create some objects that have a name then use call() to invoke sayHello()
+                    ○  apply()
+                        § Arguments are provided as an array
+                        square.apply(null, [4])
+                        << 16
+                • Custom properties
+                    ○ Description - describes what function does
+                    ○ Memoization
+                        § Provides resulting cache 
+                        function square(x){
+                            square.cache = square.cache || {};
+                            if (!square.cache[x]) {
+                                square.cache[x] = x*x;
+                            }
+                            return square.cache[x]
+                        }
+            
+            • Immediately Invoked function expressions (iife)
+                • Is invoked as soon as its defined
+                • Use () in invoke a function 
+                • Can be made into an expression by place the whole declaration in ()
+                • Useful way to perform tasks while keeping variables wrapped up in the function
+                    ○ Means global namespace is not polluted 
+                • Temporary variables 
+                    ○ No way to remove variable from a scope once it has been declared
+                    ○ Temporary iife will ensure that it is only available when it is invoked, then it will disappear
+                    ○ Will not exist after being invoked 
+                • Initialization code
+                    ○ Code is only run once, so no need to create reusable functions 
+                    ○ Can place code inside a block
+                • Safe use of strict mode
+                    ○ "use strict" - will enforce strict mode all entire JS file
+                    ○ Place code in IIFE so that only that code is in strict mode
+                    (function() {
+                        'use strict';
+                    
+                    // All your code would go inside this function
+                    
+                    })();
+                • Creating self contained code blocks
+                    ○ IIFE can be used to enclose code inside its own private scope so it wont interfere with rest of program
+                • Functions that define and rewrite themselves
+                    ○ Assign anonymous function to a variable that has the same name as the function
+                    function party(){
+                        console.log('Wow this is amazing!');
+                        party = function(){
+                            console.log('Been there, got the T-Shirt');
+                        }
+                    }
+                    
+                    First time called - will show 'wow this is amazing'
+                    
+                    Every time after that called - will show 'been there, got the t-shirt
+                    ○ If function is assigned to another variable - variable will maintain original function definition and not be rewritten
+                        § Because variable with the same name as the function is assigned to a different function
+                    ○ Int-time branching
+                        § Enables the functions to work more effectively in the browser and avoid checking for features every time they invoked
+                        § Can define a function based on if needs are met
+                            □ Have to check for needs the first time the function is called
+            • Recursive functions
+                • Invokes itself until a certain condition is met
+                • Useful when iterative process involved
+                • If function takes number as parameter and uses sequence;  second parameter is only used when the function calls itself recursively 
+            • Callbacks
+                • Functions passed to other functions as arugments and then invoked inside the function they are passed to
+            
+                • Even drive asynchronous programming
+                    ○ Only one piece of code will be processed at a time
+                    ○ Callback can be created that’s invoked 
+                        § So it makes it so the code can run out of order
+                        § Used to make sure that waiting for this task wont affect that task
+                • Callback hell
+                    ○ Can get messy
+                    ○ When there is more than one callback, it gets hard to read because of nested blocks
+            • Promises
+                • Represents the future result of asynchronous operation
+                • Help simply callback process
+                • Life cycle
+                    ○ Calls asynchronous operation and then goes to pending
+                    ○ Stays in pending while operation is taking place - called unsettled
+                    ○ After operation complete, promise is settled
+                    ○ Settled promise results in two outcomes
+                        § Resolved - operation completed successfully
+                        § Rejected - operation didn’t work as expected, wasn’t successful, or resulted in an error
+                • Super promise
+                    ○ Creating a promise:
+                        § Executor - used to create promise
+                            □ Initializes promise and starts the asynchronous operation
+                        § Two functions
+                            □  resolve() - called if operation is successful
+                            □  reject() - called if operation fails
+                    ○ Settled promise
+                        §  then() method used to deal with the outcome
+                        § Two arguments - resolve and reject
+                    ○ Chaining multiple promises
+                        § Can chain then() together to form sequential piece of code
+                        § Each promise starts when the last one ends
+                    
+            • Async functions
+                • Allow you to write asynchronous code as if it were synchronous
+                • Use await()
+                    ○ Will wrap the return value of the function in a promise that can be assigned to variable
+                    ○ Next line of code is not executed until promise is resolved
+                • Generalized functions
+                    ○ Callback can be used to build generalized functions
+                    
+            • Functions that return functions
+                •  returnHellp() - can use function to call function
+                • Closures
+                    ○ Function scope - variable inside function is kept alive while the function is active
+                        § After function has been invoked -- variables inside scope are removed
+                    ○ Closure - reference to a variable that was created inside the scope of another function; kept alive and used in another part of the program
+                        § Formed when the inner function is returned by the outer function
+                            □ Maintaining access to any variables declared inside the enclosing function
+                        § Can change the values of the variables
+                    ○ Generators
+                        §  * - asterisk place after the funtion
+                        § Returns a generator object that can be used to create an iterator that implements a next() method that returns value when next() method is called
+            • Functional programming
+                • Programming paradigm
+                    ○ Object oriented programming
+                    ○ Procedural programming
+                • Pure functions
+                    ○ A function that adheres to these rules:
+                        § Return value should only depend on values provided as arguments; doesn’t rely on values from somewhere else in the program
+                        § No side effects; doesn’t change values or data elsewhere in the program; only makes non-destructive data transformations; returns new values
+                        § Referential transparency; will always return same result
+                    ○ Function must have
+                        § At least one argument
+                        § A return value
+                    ○ Help make functional programming more concise and predictable
+                    ○ Perform operations without changing state of data
+                • Higher order functions
+                    ○ Accept another function as an argument or return another function as a result or both
+            • Currying
+                • Involves the partial application of functions
+                • Function is curried when not all arugments have been supplied to the function and expects 
+                • Final result is returned once all expected arguments have been supplied 
+                • Allows you to turn a single function into a series of functions
+                    ○ Useful if you find that you are calling a function with the same arguments 
+                            
+        </p>
+        <p>
+            Ajax 
+	• Technique that allows web pages to communicate asynchronously with a server
+	• Clients and servers
+		○ Client - will request resource from a server; server processes the request and sends back a response to the client
+		○ Allows js to request resources from a server on behalf of the client
+	• History 
+		○ Used to have to reload every time a change was made --uber slow
+		○ Asynchronous - data request sent, program doesn’t have to stop and wait for response; program carries on, waiting for an event to fire when response is received; use callbacks to manage
+		○ JS - send requests and receive responses from a server, allowing content to be updated in real time
+		○ XML - return data; JSON
+		○ API - application programming interface; collection of methods that allows external access to another program or service; third party
+			§ Fetch API 
+				□ Standard for requesting and sending data asynchronously across a network
+				□ Usage: 
+					® Provides global fetch() - only one mandatory argument (URL of resource you want to fetch)
+				□ Example: 
+				fetch('https://example.com/data')
+				.then( // code that handles the response )
+				.catch( // code that runs if the server returns an error )
+				□ Response interface 
+					® Ok - checks to see if response was successful 
+				□ If - used to check if it was successful
+				□ headers – A Headers object (see later section) containing any headers associated with the response
+				□ url – A string containing the URL of response
+				□ redirected – A boolean value that specifies if the response is the result of a redirect
+				□ type – A string value of 'basic', 'cors', 'error' or 'opaque'. A value of 'basic' is used for a response from the same domain. A value of 'cors' means the data was received from a valid cross-origin request from a different domain. A value of 'opaque' is used for a response received from 'no-cors' request from another domain, which means access to the data will be severely restricted. A value of 'error' is used when a network error occurs.
+				□ Redirect() - can be used to redirect to another URL
+					® Creates new promise that resolves the response from redirected URL
+				□ Text() - takes stream of text from response and reads it to completion; returns a promise that resolves to a USVstring object in JS
+		○ File responses 
+			§ Blob() - used to read a file of raw data (image or spreadsheet)
+			§ JSON responses - 
+				□ Json() - used to deal with transforming a stream of JSON data into a promise that resolves 
+			§ Creating response objects
+				const response = new Response( 'Hello!', {
+				    ok: true,
+				    status: 200,
+				    statusText: 'OK',
+				    type: 'cors',
+				    url: '/api'
+				});
+				
+				First argument is data that is to be returned 
+				Second argument is an object that can be used to provide values for any properties listed
+			§ Request interface
+				□ Request() - includes
+					® url (requested resource) 
+					® method (string that specifies which HTTP method should be used for the request
+					® Headers - provide details of requests headers
+					® Mode - allows you to specify if CORS used or not; CORS enabled by default
+					® Cache - allows you to specify how to request will use the browsers cache
+					® Credentials - let you specify if cookies should be allowed with the request
+					® Redirect - specifies what to do if the response returns a redirect; follow, error; manual
+			§ Living standard - fetch API at time of writing
+Chapter Summary
+	• Ajax is a technique for sending and receiving data asynchronously in the background.
+	• The data can be sent in many forms, but it is usually in JSON.
+	• Ajax can be used for making partial page updates without having to do a full page reload.
+	• Ajax can be used for communicating with external APIs.
+	• Ajax requests can be made using the Fetch API.
+	• The Response interface allows you to control the response received from a request or to create your own response objects.
+	• The Request interface allows you to create a request object that contains information about the request being made, such as the URL and headers.
+	• The Headers interface allows you to create HTTP headers that can be added to a request or response object.
+	• Requests can retrieve data using a GET request, or send data using a POST request.
+	• The FormData interface makes it easier to send data from forms.
+        </p>
+
+        <p>
+            To study more:
+	• Local storage
+		 I really like w3schools, so their page on web storage (including LocalStorage) is one I recommend: https://www.w3schools.com/html/html5_webstorage.asp Also, if you’re looking for more of a walkthrough, there’s this page which covers a lot of the LocalStorage API and gives an example of how you could put it in a website: https://www.section.io/engineering-education/how-to-use-localstorage-with-javascript/ One more thought – the Trello board (https://trello.com/b/94QLblUO/todo-project) that gave organization ideas had a card called “create the local storage helper functions in ls.js” – in this card, the description gives some helpful information: start with two...may add more later / read a value from local storage and parse it as JSON @param {string} key The key under which the value is stored under in LS @return {array} The value as an array of objects / function readFromLS(key) { } / write an array of objects to local storage under the provided key @param {string} key The key under which the value is stored under in LS * @param {array} data The information to be stored as an array of objects. Must be serialized. */ function writeToLS(key, data) { } These hints are great because it shows how LocalStorage can be quickly set up and used. Hopefully this helps for future assignments, especially the Personal Project (Challenge #2) later on this semester – please let me know if you have any further questions!
+		
+		From <https://byui.instructure.com/courses/160554/grades> 
+		
+		
+	• Comments - group project
+	• Ajax
+	• Functions js
+	• Addcomment method
+	• Module
+	• Add section
+	• Json review
+
+Questions:
+	1. Is there more than one way to write localStorage?
+		a. If yes, which is best practice?
+
+
+To do:
+	• Make site show notes instead of just the link to github
+	• Get command strips
+	• Order shutterfly photos
+	
+	
+	This code creates an event listener that first of all prevents the default behavior of the form, so it doesn't get submitted when the Add Task button is clicked. Next it creates a task object with a title property that is taken from what was entered in the form. It also has a completed property that has a default value of false. This object is then transformed into a JSON string using the JSON.stringify method and assigned to the variable data.
+	After this, we build the Headers and Request objects. Because we are sending JSON, we need to add headers of 'Accept': 'application/json' and 'Content-Type': 'application/json'. Because we are sending data, we need to ensure that the method property of the request object is POST so that a POST request is used to send the data. The most important property of the request object is body – this is where the data we want to send is placed. We use the data variable here, so that JSON is sent to the server.
+	Then we use the fetch() method to send the request and deal with the response. This creates a promise that resolves to a JSON object, so we use the json() method to create another promise that resolves to a JavaScript object. This object has a single property of id to mimic successfully saving the task to a database (as this would result in it being assigned an ID by the database).
+	We can use this to log a message to the console that refers to the id property that was returned.
+	If you open up the 'todo.html' file, add a task in the form and then submit it, you should see a message in the console similar to the one below.
+	Copy
+	
+	
+	From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/13> 
+	
+	
+
+        </p>
+        
+        <a class="allFiles" href="week7/">All files from week 7</a>
+    </div>
+   <footer>Web Design and Development &#xb7; Fall 2021 &#xb7; Brenyn Rothwell &#xb7; <a href="file:///C:/Users/breny/AppData/Local/GitHubDesktop/app-2.9.3/WDD330/index.html">Return</a></footer>
+
+</body>
+ </html>
