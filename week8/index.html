@@ -14,17 +14,175 @@
     <div>
         <h3>Questions:</h3>
         <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>I followed the instructions to create a canvas drawing, but I kept getting the error that it was null.
+                I'm not sure how to fix that?
+            </li>
         </ol>
 
         <h3>Notes:</h3>
-
         <p>
-          
-
+            Transforms and transitions
+            https://www.sitepoint.com/premium/books/html5-css3-for-the-real-world-2nd-edition/read/8
+                • Transform 
+                    ○ Translate, rotate, scale, or skew elements
+                    ○ Can have one or more functions 
+                    ○ Don’t work on inline elements 
+                        § Add display: inline-block;
+                • Translation
+                    ○ Move elements left, right, up, or down
+                    ○ Move without impacting the flow of document
+                    ○ Can only be moved relative to its current position
+                    ○ Translate(x, y);
+                    ○ Translatex - translate only on the x axis
+                    ○ Translatey - translate only on y axis
+                • Scaling
+                    ○ Scale(x, y);
+                    ○ If only one value is there, it is used for both x and y
+                    ○ Scalex(x) or scaley(y) scale only one or the other
+                    ○ Grow outwards form or shrink inwards towards center
+                        § Center will stay in the same place as dimensions change
+                    ○ Don’t add multiple transforms
+                        § Add space between each thing
+                        .ad-ad2 h1:hover span {
+                            color: #484848;  
+                            transform: translateX(40px) scale(1.5);
+                        }
+                • Rotation
+                    ○ Rotates around point of origin 
+                    ○ Default point of origin in elements center
+                    ○ Positive degrees move clockwise
+                        § Negative degrees counterclockwise
+                    ○ Transform: rotate(10deg)
+                • Skew
+                    ○ Transform: skew(x,y);
+                    ○ If second parameter is omitted, skew only occurs on x axis
+                • Changing the origin of the transform
+                    ○ Tansform-origin
+                        § Same as background-position
+                        § Defaults center of object
+                        § transform-origin: 0 0;
+                    ○ Order matters
+                        § Have to rotate before translating - translate direction will be on the rotated axis
+            
+            Transition
+                • Transition-duration
+                    ○ Sets how long the transition will take
+                        § Default to transition
+                    ○ Seconds (s) or milliseconds (ms)
+                    ○ transition-duration: 0.2s;
+                • Transition timing function
+                    ○ Control pace of transition 
+                    ○ Can start slow, fast, or slow to fast
+                    ○ Ease, linear, ease-in, ease-out, ease-in-out
+                        § Default start slow and speed up
+                    ○ Transition-delay
+                        § Delay before transition begins
+                • Transition shorthand
+                    .ad-ad2 h1 span {
+                        transition-property: transform; 
+                        transition-duration: 0.2s;  
+                        transition-timing-function: ease-out;
+                        transition-delay: 50ms;
+                    }
+                    
+                    Change to:
+                    
+                    .ad-ad2 h1 span {
+                        transition: transform 0.2s ease-out 50ms;
+                    }
+                • Multiple transitions 
+                    transition-property: transform, color; 
+                    transition-duration: 0.2s;  
+                    transition-timing-function: ease-out;
+                    transition-delay: 50ms;
+                    
+                    Short hand:
+                    transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;
+                    
+                    ○ To give all transitions the same amount of time --  use all
+                    
+                    transition: all 0.2s ease-out 50ms;
+                • Transitionend - fired when completed css transition
+                    ○ Fired once per direction
+            
+            Animation
+                • Keyframe: snapshot that defines a starting point or end point of any smooth transition
+                
+                1. Create a named animation 
+                2. Attach it to an element in that elements property declaration block
+                 
+                • @keyframs myAnimation {animation keyframes here}
+                • Don’t quote animation name
+                • Animation-name: appearDisappear;
+                • Defines length of time (sec or millie) takes to completes all the way through 0-100%
+                • Background-position
+                • Animation-direction - 0-100%; reverse 100-0%
+                • Shorthand - name, duration, timing, delay, count, direction, fill mode, play state
+                    .verbose {
+                        animation-name: appearDisappear; 
+                        animation-duration: 300ms; 
+                        animation-timing-function: ease-in;
+                        animation-iteration-count: 1;
+                        animation-direction: alternate;
+                        animation-delay: 5s;
+                        animation-fill-mode: backwards;
+                        animation-play-state: running;
+                    }
+                    
+                    /* shorthand */
+                    .concise {
+                        animation: 300ms ease-in alternate 5s backwards appearDisappear;
+                    }
+                • Careful when naming!
+                    ○ No forwards, running or alternate
+            
+            
+            
+            Canvas, svg, and drag and drop
+            https://www.sitepoint.com/premium/books/html5-css3-for-the-real-world-2nd-edition/read/12
+                • Canvas
+                    ○ See canvas.html for code
+                    ○ Can draw lines, shapes, arcs, text, gradient, patterns
+                    ○ Can manipulate pixels in images and video
+                    ○ Steps
+                        § Add canvas element -- <canvas></canvas>
+                        § Give an id and class
+                        § "sorry! Your browser doesn't support canvas" will show only if it is not supported 
+                        § Add width and height 
+                        § Add border 
+                        § Drawing on the canvas is done through javascript
+                    ○ Anonymous function
+                        § Don’t have names
+                        § Defined as an event listener 
+                        § Code inside function will be run when the load event is fired 
+                    ○ toDataURL
+                        § Saves drawing
+                        § Creates a URL with the image in it
+                    ○ Does have a lack of accessibility 
+                • Svg
+                                    
+                    ○ Viewbox - defines location, width, and height
+                    ○ Circle - defines circles with cx and cy; r = radius
+                    http://inkscape.org/ for svg images
+                    
+                • Raphaels container
+                            
+                • Canvas v. svg
+                    ○ Both can draw shapes, paths, and fronts
+                    ○ Canvas
+                        § Allows pixel manipulation
+                        § Immediate mode - can add whatever you want
+                • Drag and drop
+                    1. Set the draggable attribute on any HTML elements you’d like to be draggable.
+                    2. Add an event listener for the dragstart event on any draggable HTML elements.
+                    3. Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.
+                    
+                    From <https://www.sitepoint.com/premium/books/html5-css3-for-the-real-world-2nd-edition/read/12> 
+                    
+                • DataTransfer object
+                    ○ Type of object outlines in drag and drop api
+                    ○ Allow us to set and get data about the element that is being dragged
+                
         </p>
         
         <a class="allFiles" href="week8/">All files from week 8</a>
