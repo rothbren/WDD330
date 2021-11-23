@@ -10,7 +10,7 @@
 
 <body>
     <h1>WDD 330 portfolio</h1>
-    <h2>Week 08</h2>
+    <h2>Week 09</h2>
     <div>
         <h3>Questions:</h3>
         <ol>
@@ -21,13 +21,215 @@
         </ol>
 
         <h3>Notes:</h3>
-
         <p>
-          
+            Ch9: The Window Object
+            • Browser object model (bom)
+                ○ Collection of properties and methods that contain information about the browser and computer screen
+            • Global 
+                ○ Global variables: variables that can be accessed anywhere in the program
+                ○ Global objects creates window object
+                ○ parseInt() - 
+                ○ isNAN() - 
+            • Dialogs
+                ○ Alert()
+                    § Window.alert() - will pause execution of the program and display a message in a dialog box
+                ○ Confirm()
+                    § Window.confirm() - will stop execution of program and display a confirmation dialog that shows the message provided as an argument and fives options of OK or cancel
+                    § Returns true is user clicks ok and false if user clicks cancel
+                    window.confirm('Do you wish to continue?');
+                    << undefined
+                ○ Prompt()
+                    § Window.prompt() - will stop execution of program
+                    § Displays dialog that shows a message provided as an argument
+                    § Returns a string when the user clicks ok and if clicks cancel returns null
+            • Browser information 
+                ○ Navigator - contains info about the browser being used
+                window.navigator.userAgent
+                << "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8"
+            • Location
+                ○ Window.location - object that contains info about the URL of the current page
+                ○ Href - will return the full URL string
+                    window.location.href 
+                    << "https://www.sitepoint.com/premium/books/javascript-novice-to-ninja"
+                ○ Protocol - returns string that shows http, https, pop2, ftp
+                ○ Host - returns string describing the domain of current URL and port number
+                window.location.host
+                << "www.sitepoint.com"
+                ○ Window.location.hostname - returns current URL
+                ○ Port - returns string describing port number or empty string if port is not explicitly stated in the URL
+                ○ Pathname - returns path that follows the domain
+                    window.location.pathname
+                    << "/premium/books/javascript-novice-to-ninja"
+                ○ Search - returns string that starts with ? Followed with string parameters
+                    § Returns empty string if there is no query string parameters
+                ○ Hash - returns string that starts with # followed by fragment identifier
+                    § Returns empty if there is no fragment identifier
+                ○ Origin - returns string that shows the protocol and domain where the current page originated from; read only and cannot be changed
+                ○ Reload() - can be used to force reload page; if true it will force the browser to reload the page from the server
+                ○ Assign() - can be used to load another resource from URL provided as a parameter 
+                ○ Replace() - will not be stored in session history; user will be unable to navigate back to it using the back button
+                ○ toString() - returns a string containing the whole URL
+            • Browser history
+                ○ Window.history - used to access info about previously visited pages in current browser session
+                ○ Window.history.lenth - shows how many pages have been visited before arriving at the current page
+                ○ Window.history.go() - used to go to a specific page where 0 is the current page
+                    
+                    window.history.go(1); // goes forward 1 page
+                    window.history.go(0); // reloads the current page
+                    window.history.go(-1); // goes back 1 page
+            • Controlling windows
+                ○ Window.open() - takes URL of page to be opened as the first parameter the window tile as its second, and list of attributes as the third; can be assigned to a variable so window can be referenced later in code
+                ○ Close() - methods can be used to close window after you reference it
+            • Screen information
+                ○ Window.screen - contains info about screen browser is displayed on
+            • Document object
+                ○ Document.write - writes string of text to the page; if page is loaded, it will replace current document
+                    § Can be used inside script tags - will place text inside that areas
+            • Cookies
+                ○ Small files saved locally on users computer
+                ○ Help avoid browser does not remember anything from one request to another
+                    § Every time a user visits, nothing is remembered 
+                    § Cookies help browser remember
+                ○ Restriction - can only be read by a web page from the same domain that is set to them
+                    § Stops the site from being able to access info about users
+                    § Can only store up to 4kb of data
+                ○ Used for personalizing browser existence 
+                ○ Creating cookies
+                    § Assign it to a javascript cookie jar -- document.cookie
+                    § Document.cookie - 'superman';
+                ○ Changing cookie values
+                    § Value can be changed by reassigning document.cookie using same name but different value
+                        □ Document.cookie = ''hero=true';
+                        Document.cookie = 'city=gotham';
+                ○ Reading cookies
+                    § Split - used to break the string into an array
+                ○ Expiry date
+                    § Cookies are session by default - deleted once the browser is finished
+                    § Can add an expiring date and then it wont expire until then
+                ○ Secure - add ;secure to the end of the cookie to ensure that it is only transmitted over HTTPS network
+                ○ Deleting - set an expire time 
+            • Timing functions
+                ○ setTimeout() - accepts callback function as first parameter and number of miliseconds 
+                ○ setInterval() - will invoke the callback function after every given number of miliseconds
+            • Animation 
+                ○ setTimeOut()  and setInterval() - can be used to animate elements on a web page;  
+        Chapter Summary
+            • The window object is the global object in a browser.
+            • Global variables are actually properties of the window object in a browser environment.
+            • alert, confirm(), and prompt() are all methods of the window object, and open dialogs that halt the execution of the program.
+            • The window.navigator object gives information about the user’s browser and operating system, although it can be unreliable.
+            • The window.location object provides information about the URL of the current page.
+            • The window.history object keeps information about the pages that have been visited in the session.
+            • You can open, close, resize, and move windows (although, this doesn’t mean you should!).
+            • The window.screen object provides information about the user’s screen.
+            • document.write() is an archaic method of writing text to the document and should be avoided.
+            • Cookies can be used to store small pieces of information between requests using the document.cookie property.
+            • The window.setTimeout() method can be used to invoke a function after a set amount of time. It can be canceled using the clearTimeout() method.
+            • The window.setInterval() method can be used to repeatedly invoke a function. It can be stopped using the clearInterval() method.
+            • The window.requestAnimationFrame() method can be used to produce smooth and optimized animation by utilizing the browser's built-in graphics capabilities. It can be canceled using the cancelAnimationFrame() method.
+        
+         Ch14: HTML5 APIs
+            •  data- 
+                ○ Embed data in a web page using custom attributes that are ignored by the browser
+                ○ Private to a page
+                ○ Not intended for external service, just js program
+                ○ Attributes
+                    § Start with data-
+                    § Use lower case letters, numbers, hyphens, dots, colons, or underscores
+                    § Include optional string value
+                    § Example 
+                    <!-- 
+                    data-powers = 'flight superSpeed'
+                    data-rating = '5' 
+                    data-dropdown 
+                    data-user = 'DAZ' 
+                    data-max-length = '32'
+                     -->
+            • Web storage
+                ○ Web storage api - provides key value stor on clients computer that is similar to cookies but fewer restrictions and more storage
+                ○ Differences:
+                    § Information stored is not shared with the server on every request.
+                    § Information is available in multiple windows of the browser (but only if the domain is the same).
+                    § Storage capacity limit is much larger than the 4KB limit for cookies ( There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain.).
+                    § Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.
+                ○ Store value locally
+                    § <!--
+                    localStorage.setItem('name', 'Walter White');
+                    
+                    OR 
+                    
+                    localStorage.name = 'Heisenberg'; 
+                    
+                    console.log(localStorage.name); 
+                    << "Heisenberg";
+                    
+                    TO DELETE
+        delete localStorage.name;
+                    
+                    TO CLEAR
+                    localStorage.clear();
+                    -->
+                ○ When something is stored, storage event is fired
+                ○ Properties 
+                    § Key - tells the key of the item that changed
+                    § newValue - tells the new value to which it has been changed
+                    § oldValue - tells the previous value before it was changed
+                    § storageArea - tells us if it is stored in local or session storage
+                ○ Geolocation
+                    § Used to find the geolocation of the device -- location 
+                    § Used to filter data based on users location or speed and direction of travel
+                    § Have property of navigator object
+                    § <!--navigator.geolocation.getCurrentPosition(youAreHere);-->
+                    § position.speed property returns the ground speed of the device in meters per second.
+                    § position.altitude property returns an estimate of the device’s altitude in meters above the WGS84 ellipsoid, which is a standard measurement for the center of the Earth.
+                    § position.heading property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from North.
+                    § position.timestamp property returns the time that the position information was recorded.
+                The position object also has properties that calculate the accuracy of the measurements. These can be useful, as sometimes you only need to know the town or city users are in, while at other times you may need their exact position. position.accuracy property returns the accuracy of the latitude and longitude properties in meters. The lower the returned value, the more accurate the measurements are, as is the case for the position.altitudeAccuracy property, which returns the accuracy of the altitude property in meters.
+                
+                From <https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/14/k01nwvqn/> 
+            • Web workers
+                ○ Allow processes to be run in the background, adds support for concurrency in js
+                ○ Any process that takes a long time will be carried out in the background so website can function 
+                ○ Use terminate to stop task
+                ○ Close() to stop inside the worker script
+                ○ Shared web workers
+                    § Allows different scripts access to the same worker object 
+                ○ Service workers
+                    § Allows worker script to run while being able to intercept network requests 
+                ○ Websockets
+                    § Allows two way communication with a server -- push messaging 
+            • Notifications 
+                ○ Allow you to show messages using system notifications 
+                ○ Usually a popup 
+            • Multimedia
+                ○ <audio src=""></audio>
+                ○ <video src=""></video>
+                ○ Will only display is browser supports these features
+                ○ Play()
+                ○ Pause()
+                ○ Volume
+                ○ Muted = true;
+                ○ currentTime - used to jump to another part of the clip
+                ○ Loop
+                ○ Duration
+            • Shims and polyfills
+                ○ Helps apis work on older browsers
+        
+        Chapter Summary
+            • HTML5.1 is the latest incarnation of the Hypertext Markup Language. It covers a variety of technologies, including several APIs that are accessible using JavaScript.
+            • data- attributes help to embed custom data into a web page that can then be used to enhance the user experience with JavaScript.
+            • The Web Storage API allows key-value pairs to be stored on the user’s device in a similar way to cookies, but without the same storage restrictions.
+            • The Geolocation API allows you to access the geographic coordinates of the user’s device, as long as the user gives permission.
+            • The Web Worker API can be used to perform computationally intensive tasks in the background, which helps to avoid websites becoming unresponsive.
+            • Websockets are a new protocol for communicating over the internet, and allow real-time, two-way communication.
+            • The Notification API allows you to display notifications on the user's system.
+            • The <audio> and <video> elements can be employed to embed audio tracks and video clips in a web page. They also have a Media API that can help control the playback using JavaScript.
+            • The canvas element can be used to dynamically draw geometric shapes, text, and images on a web page in real-time using JavaScript.
+            • A shim or polyfill is a piece of code that adds support of missing features to older browsers.
+        In the next chapter, we’ll cover how to organize and optimize your code      
 
         </p>
-        
-        <a class="allFiles" href="week8/">All files from week 8</a>
+        <a class="allFiles" href="week9/">All files from week 9</a>
     </div>
    <footer>Web Design and Development &#xb7; Fall 2021 &#xb7; Brenyn Rothwell &#xb7; <a href="file:///C:/Users/breny/AppData/Local/GitHubDesktop/app-2.9.3/WDD330/index.html">Return</a></footer>
 

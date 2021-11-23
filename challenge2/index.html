@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge Two created by Brenyn Rothwell</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Wizarding World</h1>
+        <h2>celebrating 20 years of magic</h2>
+    </header>
+
+    <main>
+        <section class="sidebar">
+            <h3>Select an activity to begin your adventure</h3>
+            <li><a href="#createWizard">Turn into a Wizard</a></li>
+            <li><a href="#houseQuiz">Find Your House</a></li>
+            <li><a href="#funFacts">Fun Facts</a></li>
+            <li><a href="#gallery">Images</a></li>
+        </section>
+
+        <section class="housesOptions">
+            <ul>
+                <p>The Houses:
+                    <li>Gryffindor values courage, bravery, nerve, and chivalry, and its mascot is the lion,
+                        with
+                        scarlet red and gold color.</li> <br>
+                    <li>Hufflepuff values hard work, patience, justice, and loyalty. The house mascot is the
+                        badger, and
+                        canary yellow and black.</li><br>
+                    <li>Ravenclaw values intelligence, learning, wisdom, and wit with a mascot of the eagle and
+                        the
+                        color of blue and bronze.</li><br>
+                    <li> Slytherin, values ambition, cunning, leadership, and resourcefulness. The house mascot
+                        of
+                        Slytherin is the serpent, and its colors are green and silver.</li>
+                </p>
+            </ul>
+        </section>
+
+        <section class="createWizard" id="createWizard">
+            <h3>Turn into a witch or wizard!</h3>
+            <form id='wizard'>
+                <label for='winzardName'>Name:
+                    <input type='text' id='wizardName' name='wizardName' autofocus placeholder='Your wizard name'
+                        maxlength=32 required>
+                </label>
+
+                <label for='age'>Age:
+                    <input type='number' id='age' name='age' min=0 step=1></label>
+                <br>
+                <p>Hogwarts Courses You Want to Take:</p>
+                <ul>
+                    <li><label for='astronomy'>Astronomy
+                            <input type='checkbox' id='astronomy' value='astronomy' name='classes'>
+                        </label></li>
+                    <li><label for='charms'>Charms
+                            <input type='checkbox' id='charms' value='charms' name='classes'>
+                        </label></li>
+                    <li> <label for='darkArts'>Defense Against the Dark Arts
+                            <input type='checkbox' id='darkArts' value='darkArts' name='classes'>
+                        </label></li>
+                    <li><label for='herbology'>Herbology
+                            <input type='checkbox' id='herbology' value='herbology' name='classes'>
+                        </label></li>
+                    <li><label for='history'>History of Magic
+                            <input type='checkbox' id='history' value='history' name='classes'>
+                        </label></li>
+                    <li> <label for='potions'>Potions
+                            <input type='checkbox' id='potions' value='potions' name='classes'>
+                        </label></li>
+                    <li><label for='transfiguration'>Transfiguration
+                            <input type='checkbox' id='transfiguration' value='transfiguration' name='classes'>
+                        </label></li>
+                </ul>
+                <br>
+
+                <p>Elective Courses:</p>
+                <ul>
+                    <li><label for='alchemy'>Alchemy
+                            <input type='checkbox' id='alchemy' value='alchemy' name='classes'>
+                        </label></li>
+                    <li><label for='alrithmancy'>Arithmancy
+                            <input type='checkbox' id='alrithmancy' value='alrithmancy' name='classes'>
+                        </label></li>
+                    <li><label for='careOfM'>Care of Magical Creatures
+                            <input type='checkbox' id='careOfM' value='careOfM' name='classes'>
+                        </label></li>
+                    <li><label for='divination'>Divination
+                            <input type='checkbox' id='divination' value='divination' name='classes'>
+                        </label></li>
+                    <li><label for='muggleStudies'>Muggle Studies
+                            <input type='checkbox' id='muggleStudies' value='muggleStudies' name='classes'>
+                        </label></li>
+                    <li><label for='acientRunes'>Study of Ancient Runes
+                            <input type='checkbox' id='acientRunes' value='acientRunes' name='classes'>
+                        </label></li>
+                </ul>
+
+                <br>
+
+                <p>What type of witch or wizard are you?</p>
+                <ul>
+                    <li><label for='wizard'>Wizard:
+                            <input type='radio' name='category' value='wizard' id='wizard'>
+                        </label></li>
+                    <li><label for='dark-wizard'>Dark wizard:
+                            <input type='radio' name='category' value='dark-Wizard' id='dark-wizard'>
+                        </label></li>
+                    <li><label for='squib'>Squib:
+                            <input type='radio' name='category' value='squib' id='villain'>
+                        </label> </li>
+                </ul>
+
+                <br>
+                <label for='City'>Where you live:
+                    <select name='city' id='city'>
+                        <option value='' selected>Choose a City</option>
+                        <option value='London'>London</option>
+                        <option value='The Burrow'>The Burrow</option>
+                        <option value='Godrics Hollow'>Godric's Hollow</option>
+                        <option value='Hogsmeade'>Hogsmeade</option>
+                        <option value='Ottery St. Catchpole'>Ottery St. Catchpole</option>
+                    </select>
+                </label>
+                <br>
+                <label for='origin'>Origin Story:
+                    <br> <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
+                </label>
+
+                <button type='submit' disabled>Submit</button>
+                <button type='reset'>Reset</button>
+            </form>
+            <hr> 
+        </section>
+       
+        <section class="quizSection" id="houseQuiz">
+            <table class="houseQuiz" width="760" align="center">
+                <tr>
+                    <h3>Which house do you belong in? You'll find out soon, but first some words from the Sorting Hard:</h3>
+
+                    <p id="sortingHat">"Oh, you may not think I'm pretty,
+                        But don't judge on what you see,
+                        I'll eat myself if you can find
+                        A smarter hat than me.
+                        You can keep your bowlers black,
+                        Your top hats sleek and tall,
+                        For I'm the Hogwarts Sorting Hat
+                        And I can cap them all.
+                        There's nothing hidden in your head
+                        The Sorting Hat can't see,
+                        So try me on and I will tell you
+                        Where you ought to be.
+                        You might belong in Gryffindor,
+                        Where dwell the brave at heart,
+                        Their daring, nerve and chivalry,
+                        Set Gryffindors apart;
+                        You might belong in Hufflepuff
+                        Where they are just and loyal,
+                        Those patient Hufflepuffs are true,
+                        And unafraid of toil;
+                        Or yet in wise old Ravenclaw,
+                        If you've a ready mind,
+                        Where those of wit and learning,
+                        Will always find their kind;
+                        Or perhaps in Slytherin,
+                        You'll make your real friends,
+                        Those cunning folk use any means,
+                        To achieve their ends.
+                        So put me on! Don't be afraid!
+                        And don't get in a flap!
+                        You're in safe hands (though I have none)
+                        For I'm a Thinking Cap!"</p>
+
+                    <form class="HPQuiz">
+                        <h5>1. You are given a test in your Defense Against the Dark Arts class. The questions are asking
+                            things you don't know the answer too! What do you do when you notice one of the students has a cheat sheet?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q1" value="1"></td>
+                                    <td>Ask to share the cheat-sheet your friend has.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q1" value="2"></td>
+                                    <td>You just let them use the cheat sheet and guess on all the questions.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q1" value="3"></td>
+                                    <td>Ask them after the test where they got the cheat sheet. You don't want them to
+                                        get in trouble.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q1" value="4"></td>
+                                    <td>Talk to them after the test and force them to tell the teacher they cheated, or
+                                        you will tell on them. They must pay for their misdeeds.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q1" value="5"></td>
+                                    <td>Raise your hand and tell the teacher right away that they are cheating.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>2. You find yourself standing at a mysterious locked door, what do you do?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q2" value="1"></td>
+                                    <td>You come back at night and try to get the door open.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q2" value="2"></td>
+                                    <td>You are curious about the door, but don't do anything.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q2" value="3"></td>
+                                    <td>You pretend like you never saw it.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q2" value="4"></td>
+                                    <td>You tell a teacher that you found the door and ask what is inside.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>3. Peeves played a prank on you on your way to Herbology. It was embarrassing and now
+                            your covered in goo! Everyone started laughing when it happened. You...</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q3" value="1"></td>
+                                    <td>Laugh along with the crowd. It was a good prank, you never saw the balloon
+                                        coming!</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q3" value="2"></td>
+                                    <td> You half-heartedly laugh, but your feelings are hurt because everyone is
+                                        laughing at you.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q3" value="3"></td>
+                                    <td>You get upset and run away from the crowd. How could they be so mean?</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q3" value="4"></td>
+                                    <td>That jerk! You get mad and throw your book bag at Peeves.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q3" value="5"></td>
+                                    <td>Pretend that all is well and laugh along with the crowd, but secretly you start
+                                        planning your revenge.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>4. You are in potions class and win the challenge! Professor Snape offers you your prize
+                            of a potion of your choice. Which potion do you choose?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q4" value="1"></td>
+                                    <td>Alihotsy - A potion from the Alihotsy plant that causes hysterical laughter.
+                                    </td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q4" value="2"></td>
+                                    <td>Veritaserum - A potion that forces the drink to tell the truth</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q4" value="3"></td>
+                                    <td>Elixir to Induce Euphoria - A potion that induces a sense of inexplicable,
+                                        irrational happiness upon the drinker.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q4" value="4"></td>
+                                    <td>Felix Felicis - A potion that gives the drinker incredible good luck.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q4" value="5"></td>
+                                    <td>Forgetfulness Potion - A potion that makes the taker overly forgetful.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>5. You are checking a book out of the library for a little light reading. Which book do you
+                            choose?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q5" value="1"></td>
+                                    <td>One of Gilderoy Lockheart's many adventures.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q5" value="2"></td>
+                                    <td>You wait until nighttime so you can sneak into the resticted section to find a
+                                        really intersting book.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q5" value="3"></td>
+                                    <td>Monster Book of Monsters - you want to get ahead start on your class.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q5" value="4"></td>
+                                    <td>The Tales of Beedle The Bard</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q5" value="5"></td>
+                                    <td>Quidditch Through the Ages.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>6. A little first year accuses you of stealing his Bertie Bott's Every Flavor Bean, which
+                            you did not do. You are twice his size, but he won't back off and keeps yelling "you took my
+                            bean!". What do you do?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q6" value="1"></td>
+                                    <td>How dare he insult me? I'll show him how things work in the real world!</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q6" value="2"></td>
+                                    <td>Explain to him that I didn't take his toy. If he doesn't back off, give him a
+                                        black eye.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q6" value="3"></td>
+                                    <td>Try to rationalize with the kid. Tell him you didn't take the bean.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q6" value="5"></td>
+                                    <td>Explain to him you didn't take the bean and offer to personally help find the
+                                        person who did.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>7. During your first year at Hogwarts, you bought a wand from Ollivander's Wand Shop. What
+                            material is your wand's core made of?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q7" value="1"></td>
+                                    <td>Pheonix Feather.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q7" value="2"></td>
+                                    <td>Dragon Heartstring.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q7" value="3"></td>
+                                    <td>Unicorn Hair.</td></tr>
+                                <tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>8. It's Saturday and you have finished all your homework! How do you spend your day?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q8" value="1"></td>
+                                    <td>Head to Hogsmead with some friends. You're up for an adventure!</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q8" value="2"></td>
+                                    <td>Play Quidditch outside with your team. You are preparing for the upcoming match
+                                    </td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q8" value="3"></td>
+                                    <td>You study to get ahead on next weeks work.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>9. Your mum is taking your shopping for a pet to take with you to Hogwarts. There are so
+                                many choices! Which do you choose?</h5>
+                     
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q9" value="1"></td>
+                                    <td>A rat.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q9" value="2"></td>
+                                    <td>Am Owl .</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q9" value="3"></td>
+                                    <td>A Snake.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q9" value="4"></td>
+                                    <td>A cat</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q9" value="5"></td>
+                                    <td>No pet, your not a fan of animals.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>10. How do your friends describe you?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q10" value="1"></td>
+                                    <td>A little quarky but a friend to everyone you meet.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q10" value="2"></td>
+                                    <td>Strong minded and stand up for what you believe in.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q10" value="3"></td>
+                                    <td>You don't care what other people think and just do your own thing.</td>
+                                <tr></tr>
+                                    <td style="width:25px;"><input type="radio" name="q10" value="4"></td>
+                                    <td>You always put other people first.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>11. You get to attend one of the following events. Which one do you go to?</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q11" value="1"></td>
+                                    <td>The Yull ball. You have the perfect outfit and the best date to go with.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q11" value="2"></td>
+                                    <td>The Quidditch World Cup. Your favorite team is playing. Go  Chudley Cannons!</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q11" value="3"></td>
+                                    <td>The Triwizward Tournament. Your best friend is competing and you want to cheer them on.</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q11" value="4"></td>
+                                    <td>You don't go to any of them, your not a people person.</td></tr>
+                            </table>
+                        </p>
+
+                        <br>
+
+                        <h5>12. Choose your go to spell.</h5>
+                        <p>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q12" value="1"></td>
+                                    <td>Expelliarmus</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q12" value="2"></td>
+                                    <td>Accio</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q12" value="3"></td>
+                                    <td>Reparo</td></tr>
+                                <tr>
+                                    <td style="width:25px;"><input type="radio" name="q12" value="4"></td>
+                                    <td>Lumos</td></tr>
+                            </table>
+                        </p>
+
+                        <hr>
+
+                        <p>&nbsp;</p>
+
+                        <p class="sortBTN"" title="Sort Me" onclick="Sort();"></p>
+                    </form>
+
+                    <p>&nbsp;</p>
+                    </td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+
+        </section>
+        <p>&nbsp;</p>
+        <section class="funFacts" id="funFacts">
+            <h3>Research a Character</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea eius nobis, eligendi ad corporis earum
+                cupiditate ab eveniet nemo amet nulla! Perspiciatis quas esse impedit facere iste explicabo in numquam?
+            </p>
+<hr>
+        </section>
+      
+        
+
+        <section class="gallery" id="gallery">
+            <h3>Gallery</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea eius nobis, eligendi ad corporis earum
+                cupiditate ab eveniet nemo amet nulla! Perspiciatis quas esse impedit facere iste explicabo in numquam?
+            </p>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+    <script src="quiz.js"></script>
+    <script src="createWizard.js"></script>
+
+    <footer>Wizard World &#xb7; Fall 2021 &#xb7; &#169 Brenyn Rothwell &#xb7; <a href="challenge2/index.html">Return to
+            Top</a></footer>
+
+</body>
+
+</html>
