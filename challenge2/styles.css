@@ -15,13 +15,19 @@ h2, h3, h4, h5, h6, p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h3 {
+    color: white;
+}
+
+body{
+      background-color: rgb(228, 228, 228);  
+}
+
 main {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
     margin: auto;
-    padding: 40px;
-    background-color: rgb(228, 228, 228);
 }
 
 header {
@@ -29,19 +35,19 @@ header {
     height: 300px;
     grid-column: 1;
     text-align: center;
-    background-color: #222F5B;
-    color: #AAAAAA; 
+    background-image: url('https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    color: #222F5B; 
+  padding: 25px;
+  background-size: 100%;
+    
 }
 
-.sidebar {
-    background-color: #740001;
-    padding: 20px;
-}
 
 .housesOptions {
     grid-column: 1;
     grid-row: 2;
-    background-color: #FFED86; 
+    background-color: #222F5B;
+    color: white;
     padding: 20px;
     margin-top: 10px;
 }
@@ -58,18 +64,31 @@ a:visited {
 
 a:hover {
     color: white;
-   background-color: #490102; 
+   background-color: #3a4363; 
+}
+
+.sidebar {
+    background-color: #222F5B;
+    padding: 20px;
+    margin: 40px 0px;
 }
 
 .sidebar li {
     list-style-type: none;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 .createWizard{
    grid-column: 2;
     color: #222F5B;
-    padding-left: 60px;
+    margin: auto;
+     padding-left: 60px;
+    width: 100%;
+}
+
+.createWizard h3 {
+    background-color: #1A472A;
+    padding: 20px;
 }
 
 .createWizard ul li {
@@ -77,14 +96,16 @@ a:hover {
     margin: 5px;
 }
 
-.quizSection{
-   grid-column: 2;
+.quizSection {
+  margin: auto;
+grid-column: 2;
         color: #1A472A;
     padding-left: 60px;
 }
 
-.houseQuiz {
-    width: 100%;
+.quizSection h3 {
+    background-color: #740001;
+    padding: 20px;
 }
 
 #sortingHat {
@@ -97,8 +118,7 @@ padding: 4px;
 }
 
 .funFacts {
-   grid-column: 2;
-    
+   grid-column: 2; 
 }
 
 .gallery {

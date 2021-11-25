@@ -46,7 +46,7 @@
         <section class="createWizard" id="createWizard">
             <h3>Turn into a witch or wizard!</h3>
             <form id='wizard'>
-                <label for='winzardName'>Name:
+                <label for='wizardName'>Name:
                     <input type='text' id='wizardName' name='wizardName' autofocus placeholder='Your wizard name'
                         maxlength=32 required>
                 </label>
@@ -57,25 +57,25 @@
                 <p>Hogwarts Courses You Want to Take:</p>
                 <ul>
                     <li><label for='astronomy'>Astronomy
-                            <input type='checkbox' id='astronomy' value='astronomy' name='classes'>
+                            <input type='checkbox' id='astronomy' value='astronomy' name='courses'>
                         </label></li>
                     <li><label for='charms'>Charms
-                            <input type='checkbox' id='charms' value='charms' name='classes'>
+                            <input type='checkbox' id='charms' value='charms' name='courses'>
                         </label></li>
                     <li> <label for='darkArts'>Defense Against the Dark Arts
-                            <input type='checkbox' id='darkArts' value='darkArts' name='classes'>
+                            <input type='checkbox' id='darkArts' value='darkArts' name='courses'>
                         </label></li>
                     <li><label for='herbology'>Herbology
-                            <input type='checkbox' id='herbology' value='herbology' name='classes'>
+                            <input type='checkbox' id='herbology' value='herbology' name='courses'>
                         </label></li>
                     <li><label for='history'>History of Magic
-                            <input type='checkbox' id='history' value='history' name='classes'>
+                            <input type='checkbox' id='history' value='history' name='courses'>
                         </label></li>
                     <li> <label for='potions'>Potions
-                            <input type='checkbox' id='potions' value='potions' name='classes'>
+                            <input type='checkbox' id='potions' value='potions' name='courses'>
                         </label></li>
                     <li><label for='transfiguration'>Transfiguration
-                            <input type='checkbox' id='transfiguration' value='transfiguration' name='classes'>
+                            <input type='checkbox' id='transfiguration' value='transfiguration' name='courses'>
                         </label></li>
                 </ul>
                 <br>
@@ -83,22 +83,22 @@
                 <p>Elective Courses:</p>
                 <ul>
                     <li><label for='alchemy'>Alchemy
-                            <input type='checkbox' id='alchemy' value='alchemy' name='classes'>
+                            <input type='checkbox' id='alchemy' value='alchemy' name='courses'>
                         </label></li>
                     <li><label for='alrithmancy'>Arithmancy
-                            <input type='checkbox' id='alrithmancy' value='alrithmancy' name='classes'>
+                            <input type='checkbox' id='alrithmancy' value='alrithmancy' name='courses'>
                         </label></li>
                     <li><label for='careOfM'>Care of Magical Creatures
-                            <input type='checkbox' id='careOfM' value='careOfM' name='classes'>
+                            <input type='checkbox' id='careOfM' value='careOfM' name='courses'>
                         </label></li>
                     <li><label for='divination'>Divination
-                            <input type='checkbox' id='divination' value='divination' name='classes'>
+                            <input type='checkbox' id='divination' value='divination' name='courses'>
                         </label></li>
                     <li><label for='muggleStudies'>Muggle Studies
-                            <input type='checkbox' id='muggleStudies' value='muggleStudies' name='classes'>
+                            <input type='checkbox' id='muggleStudies' value='muggleStudies' name='courses'>
                         </label></li>
                     <li><label for='acientRunes'>Study of Ancient Runes
-                            <input type='checkbox' id='acientRunes' value='acientRunes' name='classes'>
+                            <input type='checkbox' id='acientRunes' value='acientRunes' name='courses'>
                         </label></li>
                 </ul>
 
@@ -118,7 +118,7 @@
                 </ul>
 
                 <br>
-                <label for='City'>Where you live:
+                <label for='City'>Where do you live?
                     <select name='city' id='city'>
                         <option value='' selected>Choose a City</option>
                         <option value='London'>London</option>
@@ -133,8 +133,10 @@
                     <br> <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
                 </label>
 
-                <button type='submit' disabled>Submit</button>
+                <button type='submit'>Submit</button>
                 <button type='reset'>Reset</button>
+
+                <div class="wizardInfo"></div>
             </form>
             <hr> 
         </section>
@@ -142,7 +144,7 @@
         <section class="quizSection" id="houseQuiz">
             <table class="houseQuiz" width="760" align="center">
                 <tr>
-                    <h3>Which house do you belong in? You'll find out soon, but first some words from the Sorting Hard:</h3>
+                    <h3>Which house do you belong in?</h3>
 
                     <p id="sortingHat">"Oh, you may not think I'm pretty,
                         But don't judge on what you see,
@@ -175,7 +177,7 @@
                         So put me on! Don't be afraid!
                         And don't get in a flap!
                         You're in safe hands (though I have none)
-                        For I'm a Thinking Cap!"</p>
+                        For I'm a Thinking Cap!" - The Sorting Hat</p>
 
                     <form class="HPQuiz">
                         <h5>1. You are given a test in your Defense Against the Dark Arts class. The questions are asking
@@ -382,7 +384,7 @@
                                     <td>A cat</td></tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="5"></td>
-                                    <td>No pet, your not a fan of animals.</td></tr>
+                                    <td>No pet, you are not a fan of animals.</td></tr>
                             </table>
                         </p>
 
