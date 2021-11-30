@@ -16,8 +16,11 @@ function getJSON(url) {
   function getWizard(url) {
     return getJSON(url);
   }
-  //  View code
+  //  View cod
+
   function renderWizardList(wizard, wizardListElement) {
+      //add a child to wizardListElement
+      
     // I decided to use a table to display my list of wizard. The wizardList Element is that table and it has 2 children: thead and tbody...we need to put our wizard into tbody...so I reference the second child.
     const list = wizardListElement.children[1];
     list.innerHTML = "";
