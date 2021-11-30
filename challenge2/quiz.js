@@ -26,7 +26,6 @@ function sortingHat() {
         HouseR += 1;
     } else {
         alert("Please answer question 1.");
-        return;
     }
 
     //Question 2
@@ -40,7 +39,6 @@ function sortingHat() {
         HouseG += 1;
     } else {
         alert("Please answer question 2.");
-        return;
     }
 
     //Question 3
@@ -53,11 +51,10 @@ function sortingHat() {
     } else if (HPQuiz.q3[3].checked == true) {
         HouseS += 1; HouseG+=1;
     } 
- else if (HPQuiz.q3[3].checked == true) {
-    HouseS += 1;
-}else {
+    else if (HPQuiz.q3[3].checked == true) {
+        HouseS += 1;
+    }else {
         alert("Please answer question 3.");
-        return;
     }
 
     //Question 4
@@ -70,11 +67,10 @@ function sortingHat() {
     } else if (HPQuiz.q4[3].checked == true) {
         HouseG+=1; HouseS+=1;
     } 
- else if (HPQuiz.q4[3].checked == true) {
-    HouseS+=1;
-}else {
+    else if (HPQuiz.q4[3].checked == true) {
+        HouseS+=1;
+    }else {
         alert("Please answer question 4.");
-        return;
     } 
     
     //Question 5
@@ -87,11 +83,10 @@ function sortingHat() {
     } else if (HPQuiz.q5[3].checked == true) {
         HouseG+=1;
     } 
- else if (HPQuiz.q5[3].checked == true) {
-    HouseS+=1; HouseG+=1;
-}else {
+    else if (HPQuiz.q5[3].checked == true) {
+        HouseS+=1; HouseG+=1;
+    }else {
         alert("Please answer question 5.");
-        return;
     } 
 
     //Question 6
@@ -105,7 +100,6 @@ function sortingHat() {
         HouseH+=1;
     }else {
         alert("Please answer question 6.");
-        return;
     } 
 
     //Question 7
@@ -117,7 +111,6 @@ function sortingHat() {
         HouseH+=1; HouseR+=1;
 }else {
         alert("Please answer question 7.");
-        return;
     } 
 
     //Question 8
@@ -129,7 +122,6 @@ function sortingHat() {
         HouseR+=1; HouseH+=1;
     } else {
         alert("Please answer question 8.");
-        return;
     } 
 
     //Question 9
@@ -145,7 +137,6 @@ function sortingHat() {
         HouseS+=1;
     }else {
         alert("Please answer question 9.");
-        return;
     } 
 
     //Question 10
@@ -159,7 +150,6 @@ function sortingHat() {
         HouseG+=1;
     }else {
         alert("Please answer question 10.");
-        return;
     } 
 
     //Question 11
@@ -173,7 +163,6 @@ function sortingHat() {
         HouseS+=1;
     }else {
         alert("Please answer question 11.");
-        return;
     } 
 
     //Question 12
@@ -187,71 +176,17 @@ function sortingHat() {
         HouseH+=1;
     }else {
         alert("Please answer question 12.");
-        return;
     } 
-   
-    // var x = location.href;
-    // document.getElementById("sortingResults").innerHTML = x;
-    // console.log(x);
 
-    location.href = "./Quiz-House-Results.html?" + HouseG + "&" + HouseH + "&" + HouseR + "&" + HouseS;
-    console.log(HPQuiz);
+    if(HouseH > HouseG && HouseH > HouseR && HouseH > HouseS) {
+        document.getElementById('sortingResults').innerHTML = '<p style="color:black; background-color:#FFDB00">YOU ARE IN HUFFLEPUFF!</p>';
+    }else if(HouseG > HouseH && HouseG > HouseR && HouseG > HouseS){
+        document.getElementById('sortingResults').innerHTML = '<p style="color:#EEBA3; background-color:#740001">YOU ARE IN GRYFFINDORE!</p>';
+    }else if(HouseS > HouseH && HouseS > HouseR && HouseS > HouseG){
+        document.getElementById('sortingResults').innerHTML = '<p style="color:#AAAAAA; background-color:#1A472A">YOU ARE IN SLYTHERIN!</p>';
+    }else {
+        document.getElementById('sortingResults').innerHTML = '<p style="color:#5D5D5D; background-color:#0E1A40">YOU ARE IN RAVENCLAW!</p>';
+    }
+
+    console.log('sortingResults');
 }
-
-// var aHouseName = new Array(4);
-// var aHouseVal = new Array(4);
-
-// function Init()
-// {
-// var cParameter = location.search.substring(1);
-// var aParameters = cParameter.split("&");
-
-// // I empty parameter, go back to quiz.
-// if(cParameter == "")
-// {
-//     location.href = "./Quiz-House.html";
-// }
-
-// var i = 0;
-// var j = 0;
-// var nVal = 0;
-// var cName = "";
-
-// aHouseName[0] = "Gryffindor";
-// aHouseName[1] = "Hufflepuff";
-// aHouseName[2] = "Ravenclaw";
-// aHouseName[3] = "Slytherin";
-// aHouseVal[0] = parseInt(aParameters[0]);
-// aHouseVal[1] = parseInt(aParameters[1]);
-// aHouseVal[2] = parseInt(aParameters[2]);
-// aHouseVal[3] = parseInt(aParameters[3]);
-
-// for(i=0; i<3; i++)
-// {
-//     for(j=i; j<4; j++)
-//     {
-//         if(aHouseVal[i] < aHouseVal[j])
-//         {
-//             cName = aHouseName[i];
-//             nVal = aHouseVal[i];
-//             aHouseName[i] = aHouseName[j];
-//             aHouseVal[i] = aHouseVal[j];
-//             aHouseName[j] = cName;
-//             aHouseVal[j] = nVal;
-//         }
-//     }
-// }
-// }
-
-// Init();
-// document.write('<p style="text-align:center;"><img src="./Quizzes/HP-' + aHouseName[0] + '.jpg" style="border-width:1px; border-style:solid; border-color:#000000; width:256px; height:106px;" title="' + aHouseName[0] + '"></p>'); 
-// document.write('<br><p style="text-align:center; font-weight:bold;">To put this result on your web page, copy this text and paste it into your html code.</p>');
-// document.write('<p style="text-align:center;"><textarea style="width:500px; height:80px;"><p style="font-size:8pt;"><a href="http://www.thealmightyguru.com/Reviews/HarryPotter/Docs/Quiz-House.html"><img src="http://www.thealmightyguru.com/Reviews/HarryPotter/Docs/Quizzes/HP-' + aHouseName[0] + '.jpg" style="border:none; width:256px; height106px;" title="' + aHouseName[0] + '"></a><br><a href="http://www.thealmightyguru.com/Reviews/HarryPotter/Docs/Quiz-House.html">Which Hogwarts house will you be sorted into?</a></p></textarea></p>');
-// document.write('<br><br><p style="text-align:center; font-weight:bold;">Your in-depth results are:</p>');
-// document.write('<p style="text-align:center;">');
-// for(i=0; i<4; i++)
-// {
-//     document.write(aHouseName[i] + ' - ' + aHouseVal[i] + '<br>');
-// }
-// document.write('</p>');
-

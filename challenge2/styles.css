@@ -9,11 +9,15 @@ h1 {
     font-size: 70px;
     margin: auto;
     padding-top: 60px;
-    text-shadow: 2px 2px #AE0001;
+    text-shadow: 2px 2px 6px #AE0001;
 }
 
 h2, h3, h4, h5, h6, p {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-shadow: 2px 2px 6px #AE0001;    
 }
 
 h3 {
@@ -83,7 +87,7 @@ a:hover {
    grid-column: 2;
     color: #222F5B;
     margin: auto;
-     padding-left: 60px;
+     padding: 10px 0px 60px 60px;
     width: 100%;
 }
 
@@ -127,6 +131,10 @@ grid-column: 2;
   input[type=submit]:hover {
     background-color: #740001;
   }
+
+#sortingResults {
+    padding: 10px;
+}
 
 .funFacts {
    grid-column: 2; 
@@ -187,4 +195,46 @@ background-color: #222F5B;
     width: 100%;
 }
 
+@media only screen and (max-width: 600px ) {
+    main {
+    grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }    
+    
+    .sidebar {
+      grid-column-start: 1; 
+      grid-column-end: 2;
+  }
+    
+    .createWizard{
+      grid-column-start: 1; 
+        grid-row-start: 2;
+        padding: 0px;
+    }
+    
+    .housesOptions {
+        grid-row-start: 3;
+        
+    }
+    
+  
+    .quizSection {
+        grid-column-start: 1; 
+        grid-row-start: 4;
+        padding: 0px;
+    }
+    
+    .funFacts{
+    grid-column-start: 1; 
+        grid-row-start: 5;
+        padding: 0px;    
+    }
+    
+    .galleryImg {
+      grid-template-columns: 1fr 1fr; 
+        grid-column-start: 1; 
+        grid-row-start: 6;
+        padding: 0px;
+  }
+}
 

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+    <h1>WDD 330 portfolio</h1>
+    <h2>Week 13</h2>
+    <div>
+        <h3>Questions:</h3>
+        <ol>
+            <li></li>
+        </ol>
+
+        <h3>Notes:</h3>
+        <p>Client side form validation https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+            • Client side validation: initial check catches invalid data on client side so user can fix it
+            • Form validation 
+                ○ Feedback that tells you if you inputted data wrong
+                    § "this field is required"
+                ○ Server checks to see if the data is the correct format and within the constraints
+            • Why
+                ○ Want to get the right data in the right format
+                ○ Protect users data 
+                    § Force users to enter secure passwords to protect their information
+                ○ Protect ourselves
+            • Different types
+                ○ Built in form validation - uses HTML5; doesn’t require much javascript
+                ○ Javascript validation - coded using JS; customizable; need to create it all or use a library
+            • Built in form validation
+                ○ Required -- :required 
+                ○ Minlength and maxlength
+                ○ Min and max
+                ○ Type
+                ○ Pattern 
+            • Valid if the input matches the classes, it will be true
+                ○ :valid css pseudo class; lets you apply specific style to valid elements
+                ○ If user tries to send the data the browser will submit the form as long there is nothing else stopping it
+            • Not valid if input does not match; false
+                ○ :invalid css pseudo calss; depending on the error, lets you apply specific style to invalid elements
+                ○ If user tries to send the data, the browser will block the form and display an error message
+            • Validating against a regular expression
+                ○ Pattern
+                    § Expects regular expression as its value
+                    § Regular expression - regex is used to match character combinations in text strings
+                    § a — Matches one character that is a (not b, not aa, and so on).
+                    § abc — Matches a, followed by b, followed by c.
+                    § ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)
+                    § ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).
+                    § a|b — Matches one character that is a or b.
+                    § abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on).
+                    
+                    From <https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation> 
+                    
+            • Constraining the length of your entries
+                ○ Can constrain character length of text fields 
+                    § <input> or <textarea> by using min length maxlength
+                ○ Don’t let the user type a longer value than expected
+            • Constraining the values of your entries 
+                ○ Min and max attributes can be used to provide a range of values
+            • Validating forms using JS
+                ○ validationMessage: returns localized message describing the validation constrains that the control doesn’t satisfy 
+                ○ Validity: returns validityState object that contains several properties  
+                ○ patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.
+                ○ tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.
+                ○ tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.
+                ○ rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.
+                ○ rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.
+                ○ typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.
+                ○ valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.
+                ○ valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.
+                
+                From <https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation> 
+                ○ willValidate; returns true if element will be validated when the form is submitted, false otherwise
+            
+                ○ checkValidity() - true if elements value has no validity problems false otherwise
+                ○ reportValidity() - reports invalid field(s) using events
+                ○ setCustomValidity(message) - adds custom error message to element
+        
+                ○ Implementing customized error message
+                    § Automated message drawbacks
+                        □ Have no standard way to change their look and feel with CSS
+                        □ Depend on browser locale, you can have a page in one language but an error message in another language 
+            • Validating forms without a build in API
+                ○ Ask yourself
+                    § What kind of validation should I perform?
+                    § What should I do if the form doesn’t validate?
+                    § How can I help the user to correct invalid data?
+            • Summary
+                ○ Display explicit error messages
+                ○ Be permissive about the input format
+                ○ Point out exactly where the error occurs
+                
+                
+                
+        Using fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            • Fetch API - provides JS interface for accessing and manipulating parts of HTTP pipeline such as requests and responses
+            • Fetch specification differs from jQuery.ajax() 
+            • Example:
+                fetch('http://example.com/movies.json')
+                  .then(response => response.json())
+                  .then(data => console.log(data));
+            • Takes one argument; does not directly return JSON response body instead, returns promise with response object
+            • Supplying request options
+                ○ Fetch() - can accept a second parameter
+                ○ Accept, accept-language, content language, and content-type
+            • Sending request with credentials included
+            • Uploading JSON data 
+                const data = { username: 'example' };
+                
+                fetch('https://example.com/profile', {
+                  method: 'POST', // or 'PUT'
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(data => {
+                  console.log('Success:', data);
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                });
+                
+            • Uploading a file
+            const formData = new FormData();
+            const fileField = document.querySelector('input[type="file"]');
+            
+            formData.append('username', 'abc123');
+            formData.append('avatar', fileField.files[0]);
+            
+            fetch('https://example.com/profile/avatar', {
+              method: 'PUT',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+              console.log('Success:', result);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+            
+            • Uploading multiple files
+            const formData = new FormData();
+            const photos = document.querySelector('input[type="file"][multiple]');
+            
+            formData.append('title', 'My Vegas Vacation');
+            for (let i = 0; i < photos.files.length; i++) {
+              formData.append(`photos_${i}`, photos.files[i]);
+            }
+            
+            fetch('https://example.com/posts', {
+              method: 'POST',
+              body: formData,
+            })
+            .then(response => response.json())
+            .then(result => {
+              console.log('Success:', result);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+            
+            • Processing a text file line by line
+            • Check if fetch was successful
+                ○ Fetch() will reject TypeError when a network error is encountered
+            • Supplying your own request object
+                ○ Can create a request using request()
+            • Headers
+                ○ Allow you to create your own headers via headers()
+                const content = 'Hello World';
+                const myHeaders = new Headers();
+                myHeaders.append('Content-Type', 'text/plain');
+                myHeaders.append('Content-Length', content.length.toString());
+                myHeaders.append('X-Custom-Header', 'ProcessThisImmediately');
+                ○ Can be sent in requests and received in responses
+            • Guard
+                ○ None - default
+                ○ Request - guard for a header object obtained from a request  
+                ○ Request-no-cors - guard for headers object obtained from a request created with request.mode no cors
+                ○ Response - guard for headers object obtained from a response
+                ○ Immutable - guard that renders a headers object read only; mostly for servers workers
+            • Response objects
+                ○ Response instances are returned when fetch() promises are resolved
+                ○ Response.status - integer containing the response status code
+                ○ Response.statusText- a string which corresponds to the HTTP status code message
+                
+        
+        </p>
+        <a class="allFiles" href="week10/">All files from week 9</a>
+    </div>
+   <footer>Web Design and Development &#xb7; Fall 2021 &#xb7; Brenyn Rothwell &#xb7; <a href="file:///C:/Users/breny/AppData/Local/GitHubDesktop/app-2.9.3/WDD330/index.html">Return</a></footer>
+
+</body>
+ </html>

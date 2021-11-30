@@ -45,31 +45,48 @@
                 </p>
             </ul>
         </section>
-
+<section class="intro">
+    <h3>Welcome to the Wizarding World of Harry Potter</h3>
+    <p>One June 26, 1997 the first book of the Harry Potter series
+        was published, forever changing the world. This series has 
+        brought magic to people of all ages all over world. Join us
+        in celebrating 20 years of magic! From Hogwarts sorting to
+        making yourself into a wizard, we have it all. Emerse yourself
+        in the wonderful world created by J.K.Rowling. Welcome to the magic!
+    </p>
+</section>
         <section class="createWizard" id="createWizard">
-            <h3>Turn into a witch or wizard!</h3>
+
             <form id='makeWizard'>
+                <h3>Turn into a witch or wizard!</h3>
                 <label for='wizardName'>Name:
                     <input type='text' id='wizardName' name='wizardName' autofocus placeholder='Your wizard name'
                         maxlength=32 required>
                 </label>
-                            <label for='age'>Age:
+                <label for='age'>Age:
                     <input type='number' id='age' name='age' min=0 step=1></label>
                 <br>
                 <p>What type of witch or wizard are you?</p>
                 <ul>
                     <li><label for='wizard'>Wizard:
-                            <input type='radio' name='category' value='wizard' id='wizard'>
+                            <input type='radio' name='category' value='Wizard' id='wizard'>
                         </label></li>
-                    <li><label for='dark-wizard'>Dark wizard:
-                            <input type='radio' name='category' value='dark-Wizard' id='dark-wizard'>
+                    <li><label for='wizard'>Witch:
+                            <input type='radio' name='category' value='Witch' id='wizard'>
+                        </label></li>
+                    <li><label for='dark-wizard'>Dark Wizard:
+                            <input type='radio' name='category' value='Dark Wizard' id='dark-wizard'>
+                        </label></li>
+                    <li><label for='dark-wizard'>Dark Witch:
+                            <input type='radio' name='category' value='Dark Witch' id='dark-wizard'>
                         </label></li>
                     <li><label for='squib'>Squib:
-                            <input type='radio' name='category' value='squib' id='villain'>
+                            <input type='radio' name='category' value='Squib' id='villain'>
                         </label> </li>
                 </ul>
                 <br>
-                <label for='City'><p>Where do you live?</p>
+                <label for='City'>
+                    <p>Where do you live?</p>
                     <select name='city' id='city'>
                         <option value='' selected>Choose a City</option>
                         <option value='London'>London</option>
@@ -94,7 +111,7 @@
                     <li><label for='herbology'>Herbology
                             <input type='checkbox' id='herbology' value='Herbology' name='courses'>
                         </label></li>
-                        </label></li>
+                    </label></li>
                     <li><label for='history'>History of Magic
                             <input type='checkbox' id='history' value='History' name='courses'>
                         </label></li>
@@ -128,17 +145,18 @@
                         </label></li>
                 </ul>
                 <br>
-                <label for='origin'><p>Origin Story:</p>
+                <label for='origin'>
+                    <p>Origin Story:</p>
                     <br> <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
                 </label>
 
                 <button type='submit'>Submit</button>
                 <button type='reset'>Reset</button>
 
-                <div id="wizardInfo">Your Information</div>
+                <div id="wizardInfo"></div>
             </form>
         </section>
-       
+        <br>
         <section class="quizSection" id="houseQuiz">
             <table class="houseQuiz" width="760" align="center">
                 <tr>
@@ -178,27 +196,34 @@
                         For I'm a Thinking Cap!" - The Sorting Hat</p>
 
                     <form name="HPQuiz" class="HPQuiz">
-                        <h5>1. You are given a test in your Defense Against the Dark Arts class. The questions are asking
-                            things you don't know the answer too! What do you do when you notice one of the students has a cheat sheet?</h5>
+                        <h5>1. You are given a test in your Defense Against the Dark Arts class. The questions are
+                            asking
+                            things you don't know the answer too! What do you do when you notice one of the students has
+                            a cheat sheet?</h5>
                         <p>
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q1" value="1"></td>
-                                    <td>Ask to share the cheat-sheet your friend has.</td></tr>
+                                    <td>Ask to share the cheat-sheet your friend has.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q1" value="2"></td>
-                                    <td>You just let them use the cheat sheet and guess on all the questions.</td></tr>
+                                    <td>You just let them use the cheat sheet and guess on all the questions.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q1" value="3"></td>
                                     <td>Ask them after the test where they got the cheat sheet. You don't want them to
-                                        get in trouble.</td></tr>
+                                        get in trouble.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q1" value="4"></td>
                                     <td>Talk to them after the test and force them to tell the teacher they cheated, or
-                                        you will tell on them. They must pay for their misdeeds.</td></tr>
+                                        you will tell on them. They must pay for their misdeeds.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q1" value="5"></td>
-                                    <td>Raise your hand and tell the teacher right away that they are cheating.</td></tr>
+                                    <td>Raise your hand and tell the teacher right away that they are cheating.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -209,16 +234,20 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q2" value="1"></td>
-                                    <td>You come back at night and try to get the door open.</td></tr>
+                                    <td>You come back at night and try to get the door open.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q2" value="2"></td>
-                                    <td>You are curious about the door, but don't do anything.</td></tr>
+                                    <td>You are curious about the door, but don't do anything.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q2" value="3"></td>
-                                    <td>You pretend like you never saw it.</td></tr>
+                                    <td>You pretend like you never saw it.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q2" value="4"></td>
-                                    <td>You tell a teacher that you found the door and ask what is inside.</td></tr>
+                                    <td>You tell a teacher that you found the door and ask what is inside.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -231,21 +260,26 @@
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q3" value="1"></td>
                                     <td>Laugh along with the crowd. It was a good prank, you never saw the balloon
-                                        coming!</td></tr>
+                                        coming!</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q3" value="2"></td>
                                     <td> You half-heartedly laugh, but your feelings are hurt because everyone is
-                                        laughing at you.</td></tr>
+                                        laughing at you.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q3" value="3"></td>
-                                    <td>You get upset and run away from the crowd. How could they be so mean?</td></tr>
+                                    <td>You get upset and run away from the crowd. How could they be so mean?</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q3" value="4"></td>
-                                    <td>That jerk! You get mad and throw your book bag at Peeves.</td></tr>
+                                    <td>That jerk! You get mad and throw your book bag at Peeves.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q3" value="5"></td>
                                     <td>Pretend that all is well and laugh along with the crowd, but secretly you start
-                                        planning your revenge.</td></tr>
+                                        planning your revenge.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -258,20 +292,25 @@
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q4" value="1"></td>
                                     <td>Alihotsy - A potion from the Alihotsy plant that causes hysterical laughter.
-                                    </td></tr>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q4" value="2"></td>
-                                    <td>Veritaserum - A potion that forces the drink to tell the truth</td></tr>
+                                    <td>Veritaserum - A potion that forces the drink to tell the truth</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q4" value="3"></td>
                                     <td>Elixir to Induce Euphoria - A potion that induces a sense of inexplicable,
-                                        irrational happiness upon the drinker.</td></tr>
+                                        irrational happiness upon the drinker.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q4" value="4"></td>
-                                    <td>Felix Felicis - A potion that gives the drinker incredible good luck.</td></tr>
+                                    <td>Felix Felicis - A potion that gives the drinker incredible good luck.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q4" value="5"></td>
-                                    <td>Forgetfulness Potion - A potion that makes the taker overly forgetful.</td></tr>
+                                    <td>Forgetfulness Potion - A potion that makes the taker overly forgetful.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -283,20 +322,25 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q5" value="1"></td>
-                                    <td>One of Gilderoy Lockheart's many adventures.</td></tr>
+                                    <td>One of Gilderoy Lockheart's many adventures.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q5" value="2"></td>
                                     <td>You wait until nighttime so you can sneak into the resticted section to find a
-                                        really intersting book.</td></tr>
+                                        really intersting book.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q5" value="3"></td>
-                                    <td>Monster Book of Monsters - you want to get ahead start on your class.</td></tr>
+                                    <td>Monster Book of Monsters - you want to get ahead start on your class.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q5" value="4"></td>
-                                    <td>The Tales of Beedle The Bard</td></tr>
+                                    <td>The Tales of Beedle The Bard</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q5" value="5"></td>
-                                    <td>Quidditch Through the Ages.</td></tr>
+                                    <td>Quidditch Through the Ages.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -309,18 +353,22 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q6" value="1"></td>
-                                    <td>How dare he insult me? I'll show him how things work in the real world!</td></tr>
+                                    <td>How dare he insult me? I'll show him how things work in the real world!</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q6" value="2"></td>
                                     <td>Explain to him that I didn't take his toy. If he doesn't back off, give him a
-                                        black eye.</td></tr>
+                                        black eye.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q6" value="3"></td>
-                                    <td>Try to rationalize with the kid. Tell him you didn't take the bean.</td></tr>
+                                    <td>Try to rationalize with the kid. Tell him you didn't take the bean.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q6" value="5"></td>
                                     <td>Explain to him you didn't take the bean and offer to personally help find the
-                                        person who did.</td></tr>
+                                        person who did.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -332,13 +380,16 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q7" value="1"></td>
-                                    <td>Pheonix Feather.</td></tr>
+                                    <td>Pheonix Feather.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q7" value="2"></td>
-                                    <td>Dragon Heartstring.</td></tr>
+                                    <td>Dragon Heartstring.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q7" value="3"></td>
-                                    <td>Unicorn Hair.</td></tr>
+                                    <td>Unicorn Hair.</td>
+                                </tr>
                                 <tr>
                             </table>
                         </p>
@@ -350,39 +401,47 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q8" value="1"></td>
-                                    <td>Head to Hogsmead with some friends. You're up for an adventure!</td></tr>
+                                    <td>Head to Hogsmead with some friends. You're up for an adventure!</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q8" value="2"></td>
                                     <td>Play Quidditch outside with your team. You are preparing for the upcoming match
-                                    </td></tr>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q8" value="3"></td>
-                                    <td>You study to get ahead on next weeks work.</td></tr>
+                                    <td>You study to get ahead on next weeks work.</td>
+                                </tr>
                             </table>
                         </p>
 
                         <br>
 
                         <h5>9. Your mum is taking your shopping for a pet to take with you to Hogwarts. There are so
-                                many choices! Which do you choose?</h5>
-                     
+                            many choices! Which do you choose?</h5>
+
                         <p>
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="1"></td>
-                                    <td>A rat.</td></tr>
+                                    <td>A rat.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="2"></td>
-                                    <td>Am Owl .</td></tr>
+                                    <td>Am Owl .</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="3"></td>
-                                    <td>A Snake.</td></tr>
+                                    <td>A Snake.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="4"></td>
-                                    <td>A cat</td></tr>
+                                    <td>A cat</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q9" value="5"></td>
-                                    <td>No pet, you are not a fan of animals.</td></tr>
+                                    <td>No pet, you are not a fan of animals.</td>
+                                </tr>
                             </table>
                         </p>
 
@@ -393,71 +452,78 @@
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q10" value="1"></td>
-                                    <td>A little quarky but a friend to everyone you meet.</td></tr>
+                                    <td>A little quarky but a friend to everyone you meet.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q10" value="2"></td>
-                                    <td>Strong minded and stand up for what you believe in.</td></tr>
+                                    <td>Strong minded and stand up for what you believe in.</td>
+                                </tr>
                                 <tr>
                                     <td style="width:25px;"><input type="radio" name="q10" value="3"></td>
                                     <td>You don't care what other people think and just do your own thing.</td>
                                 <tr></tr>
-                                    <td style="width:25px;"><input type="radio" name="q10" value="4"></td>
-                                    <td>You always put other people first.</td></tr>
-                            </table>
-                        </p>
-
-                        <br>
-
-                        <h5>11. You get to attend one of the following events. Which one do you go to?</h5>
-                        <p>
-                            <table style="width:100%;">
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q11" value="1"></td>
-                                    <td>The Yull ball. You have the perfect outfit and the best date to go with.</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q11" value="2"></td>
-                                    <td>The Quidditch World Cup. Your favorite team is playing. Go  Chudley Cannons!</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q11" value="3"></td>
-                                    <td>The Triwizward Tournament. Your best friend is competing and you want to cheer them on.</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q11" value="4"></td>
-                                    <td>You don't go to any of them, your not a people person.</td></tr>
-                            </table>
-                        </p>
-
-                        <br>
-
-                        <h5>12. Choose your go to spell.</h5>
-                        <p>
-                            <table style="width:100%;">
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q12" value="1"></td>
-                                    <td>Expelliarmus</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q12" value="2"></td>
-                                    <td>Accio</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q12" value="3"></td>
-                                    <td>Reparo</td></tr>
-                                <tr>
-                                    <td style="width:25px;"><input type="radio" name="q12" value="4"></td>
-                                    <td>Lumos</td></tr>
-                            </table>
-                        </p>
-
-                        <p>&nbsp;</p>
-
-                        <input type="submit" value="Sort Me!" class="sortBTN" title="Sort Me" onclick="sortingHat()"></input>
-                    </form>
-<div id="sortingResults"></div>
-
-                    <p>&nbsp;</p>
-                    </td>
+                                <td style="width:25px;"><input type="radio" name="q10" value="4"></td>
+                                <td>You always put other people first.</td>
                 </tr>
             </table>
-            </td>
-            </tr>
+            </p>
+
+            <br>
+
+            <h5>11. You get to attend one of the following events. Which one do you go to?</h5>
+            <p>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q11" value="1"></td>
+                        <td>The Yull ball. You have the perfect outfit and the best date to go with.</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q11" value="2"></td>
+                        <td>The Quidditch World Cup. Your favorite team is playing. Go Chudley Cannons!</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q11" value="3"></td>
+                        <td>The Triwizward Tournament. Your best friend is competing and you want to cheer them on.</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q11" value="4"></td>
+                        <td>You don't go to any of them, your not a people person.</td>
+                    </tr>
+                </table>
+            </p>
+
+            <br>
+
+            <h5>12. Choose your go to spell.</h5>
+            <p>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q12" value="1"></td>
+                        <td>Expelliarmus</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q12" value="2"></td>
+                        <td>Accio</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q12" value="3"></td>
+                        <td>Reparo</td>
+                    </tr>
+                    <tr>
+                        <td style="width:25px;"><input type="radio" name="q12" value="4"></td>
+                        <td>Lumos</td>
+                    </tr>
+                </table>
+            </p>
+
+            <p>&nbsp;</p>
+
+            <input type="submit" value="Sort Me!" class="sortBTN" title="Sort Me" onclick="sortingHat()"></input>
+
+            </form>
+            <div id="sortingResults"></div>
+
+            
 
         </section>
         <p>&nbsp;</p>
@@ -475,73 +541,87 @@
                 <tbody></tbody>
             </table>
             <a href="#" id="prev">Prev</a>
-            <a href="#" id="next">Next</a>   
+            <a href="#" id="next">Next</a>
         </section>
-      
-        
+
+
 
         <section class="galleryImg" id="galleryImg">
             <h3>Gallery</h3>
             <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Cinque Terre" width="600" height="400">
                 </a>
-                <div class="desc">Hogwarts Express - <br> 
+                <div class="desc">Hogwarts Express - <br>
                     Photo by Gabriela Palai from Pexels
-                    </div>
-              </div>
-              
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Forest" width="600" height="400">
+                </div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Forest" width="600" height="400">
                 </a>
-                <div class="desc">Hungarian Horntail - <br> 
+                <div class="desc">Hungarian Horntail - <br>
                     Photo by Craig Adderley from Pexels
-                    </div>
-              </div>
-              
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Northern Lights" width="600" height="400">
+                </div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Northern Lights" width="600" height="400">
                 </a>
-                <div class="desc">Flying Car - <br> 
+                <div class="desc">Flying Car - <br>
                     Photo by Stephan Streuders from Pexels
-                    </div>
-              </div>
-              
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Mountains" width="600" height="400">
                 </a>
                 <div class="desc">Wands - <br>
                     Photo by RODNAE Productions from Pexels
-                    </div>
-              </div>
+                </div>
+            </div>
 
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Mountains" width="600" height="400">
                 </a>
                 <div class="desc">Potions - <br>
                     Photo by RODNAE Productions from Pexels
-                    </div>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Mountains" width="600" height="400">
                 </a>
                 <div class="desc">Potions - <br>
                     Photo by RODNAE Productions from Pexels
-                    </div>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                  <img src="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Mountains" width="600" height="400">
                 </a>
                 <div class="desc">Spell Book - <br>
                     Photo by RODNAE Productions from Pexels
-                    </div>
-              </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -549,4 +629,5 @@
             Top</a></footer>
     <script src="createWizard.js"></script>
 </body>
+
 </html>

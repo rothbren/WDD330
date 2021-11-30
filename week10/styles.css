@@ -1,0 +1,49 @@
+
+body {
+    padding: 40px;
+    margin: 40px;
+    background-color: lavender;
+}
+
+h1 {
+    border-bottom: 2px solid black;
+}
+
+h1, h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    padding: 10px;
+}
+
+p {
+    font-size: 14px;
+}
+
+footer {
+    margin: auto;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: rgb(187, 187, 207);
+}
+
+.allFiles {
+    padding: 10px;
+    width: 25%;
+    background: #3d467a;
+    color: white;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .allFiles:hover {
+    background-color: white;
+    color: #3d467a;
+  }
+
+  a {
+      text-decoration: none;
+  }
