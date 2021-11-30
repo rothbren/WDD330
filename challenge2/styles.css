@@ -22,14 +22,14 @@ h3 {
 
 body{
       background-color: rgb(228, 228, 228);  
-    margin: 0px 80px;
+    
 }
 
 main {
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: auto;
-    margin: auto;
+    margin: 0px 80px;
 }
 
 header {
@@ -70,13 +70,13 @@ a:hover {
 
 .sidebar {
     background-color: #222F5B;
-    padding: 20px;
-    margin: 40px 0px;
+    padding: 10px;
+    margin: 20px 5px;
 }
 
 .sidebar li {
     list-style-type: none;
-    padding: 20px;
+    padding-bottom: 20px;
 }
 
 .createWizard{
@@ -115,7 +115,7 @@ grid-column: 2;
 
   input[type=submit] {
     width: 100%;
-    background-color: #1A472A;
+    background-color: #740001;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -125,15 +125,58 @@ grid-column: 2;
   }
   
   input[type=submit]:hover {
-    background-color: #2A623D;
+    background-color: #740001;
   }
 
 .funFacts {
    grid-column: 2; 
+    padding-left: 60px;
 }
 
-.gallery {
-   grid-column: 2;
+.funFacts h3 {
+    background-color: #FFDB00;
+    padding: 20px; 
+}
+
+.galleryImg {
+   grid-column-start: 2;
+    grid-column-end: 4;
+    padding-left: 60px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25% 
+}
+
+.galleryImg h3 {
+    background-color: #222F5B;
+    padding: 20px; 
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 2px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 90%;
+  height: auto;
+  padding-top: 10px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+div.gallery a:hover {
+    background-color: transparent;
 }
 
 footer {
@@ -141,6 +184,7 @@ background-color: #222F5B;
     color: #AAAAAA; 
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 

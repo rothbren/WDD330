@@ -7,6 +7,9 @@
     <title>Challenge Two created by Brenyn Rothwell</title>
     <link rel="stylesheet" href="styles.css">
 
+    <script src="main.js"></script>
+    <script src="quiz.js"></script>
+    <script src="characters.js"></script>
 </head>
 
 <body>
@@ -45,65 +48,14 @@
 
         <section class="createWizard" id="createWizard">
             <h3>Turn into a witch or wizard!</h3>
-            <form id='wizard'>
+            <form id='makeWizard'>
                 <label for='wizardName'>Name:
                     <input type='text' id='wizardName' name='wizardName' autofocus placeholder='Your wizard name'
                         maxlength=32 required>
                 </label>
-
-                <label for='age'>Age:
+                            <label for='age'>Age:
                     <input type='number' id='age' name='age' min=0 step=1></label>
                 <br>
-                <p>Hogwarts Courses You Want to Take:</p>
-                <ul>
-                    <li><label for='astronomy'>Astronomy
-                            <input type='checkbox' id='astronomy' value='astronomy' name='courses'>
-                        </label></li>
-                    <li><label for='charms'>Charms
-                            <input type='checkbox' id='charms' value='charms' name='courses'>
-                        </label></li>
-                    <li> <label for='darkArts'>Defense Against the Dark Arts
-                            <input type='checkbox' id='darkArts' value='darkArts' name='courses'>
-                        </label></li>
-                    <li><label for='herbology'>Herbology
-                            <input type='checkbox' id='herbology' value='herbology' name='courses'>
-                        </label></li>
-                    <li><label for='history'>History of Magic
-                            <input type='checkbox' id='history' value='history' name='courses'>
-                        </label></li>
-                    <li> <label for='potions'>Potions
-                            <input type='checkbox' id='potions' value='potions' name='courses'>
-                        </label></li>
-                    <li><label for='transfiguration'>Transfiguration
-                            <input type='checkbox' id='transfiguration' value='transfiguration' name='courses'>
-                        </label></li>
-                </ul>
-                <br>
-
-                <p>Elective Courses:</p>
-                <ul>
-                    <li><label for='alchemy'>Alchemy
-                            <input type='checkbox' id='alchemy' value='alchemy' name='courses'>
-                        </label></li>
-                    <li><label for='alrithmancy'>Arithmancy
-                            <input type='checkbox' id='alrithmancy' value='alrithmancy' name='courses'>
-                        </label></li>
-                    <li><label for='careOfM'>Care of Magical Creatures
-                            <input type='checkbox' id='careOfM' value='careOfM' name='courses'>
-                        </label></li>
-                    <li><label for='divination'>Divination
-                            <input type='checkbox' id='divination' value='divination' name='courses'>
-                        </label></li>
-                    <li><label for='muggleStudies'>Muggle Studies
-                            <input type='checkbox' id='muggleStudies' value='muggleStudies' name='courses'>
-                        </label></li>
-                    <li><label for='acientRunes'>Study of Ancient Runes
-                            <input type='checkbox' id='acientRunes' value='acientRunes' name='courses'>
-                        </label></li>
-                </ul>
-
-                <br>
-
                 <p>What type of witch or wizard are you?</p>
                 <ul>
                     <li><label for='wizard'>Wizard:
@@ -116,9 +68,8 @@
                             <input type='radio' name='category' value='squib' id='villain'>
                         </label> </li>
                 </ul>
-
                 <br>
-                <label for='City'>Where do you live?
+                <label for='City'><p>Where do you live?</p>
                     <select name='city' id='city'>
                         <option value='' selected>Choose a City</option>
                         <option value='London'>London</option>
@@ -129,16 +80,63 @@
                     </select>
                 </label>
                 <br>
-                <label for='origin'>Origin Story:
+                <p>Hogwarts Courses You Want to Take:</p>
+                <ul>
+                    <li><label for='astronomy'>Astronomy
+                            <input type='checkbox' id='astronomy' value='Astronomy' name='courses'>
+                        </label></li>
+                    <li><label for='charms'>Charms
+                            <input type='checkbox' id='charms' value='Charms' name='courses'>
+                        </label></li>
+                    <li> <label for='darkArts'>Defense Against the Dark Arts
+                            <input type='checkbox' id='darkArts' value='Dark Arts' name='courses'>
+                        </label></li>
+                    <li><label for='herbology'>Herbology
+                            <input type='checkbox' id='herbology' value='Herbology' name='courses'>
+                        </label></li>
+                        </label></li>
+                    <li><label for='history'>History of Magic
+                            <input type='checkbox' id='history' value='History' name='courses'>
+                        </label></li>
+                    <li> <label for='potions'>Potions
+                            <input type='checkbox' id='potions' value='Potions' name='courses'>
+                        </label></li>
+                    <li><label for='transfiguration'>Transfiguration
+                            <input type='checkbox' id='transfiguration' value='Transfiguration' name='courses'>
+                        </label></li>
+                </ul>
+                <br>
+
+                <p>Elective Courses:</p>
+                <ul>
+                    <li><label for='alchemy'>Alchemy
+                            <input type='checkbox' id='alchemy' value='Alchemy' name='courses'>
+                        </label></li>
+                    <li><label for='alrithmancy'>Arithmancy
+                            <input type='checkbox' id='alrithmancy' value='Alrithmancy' name='courses'>
+                        </label></li>
+                    <li><label for='careOfM'>Care of Magical Creatures
+                            <input type='checkbox' id='careOfM' value='Care Of Magical Creatures' name='courses'>
+                        </label></li>
+                    <li><label for='divination'>Divination
+                            <input type='checkbox' id='divination' value='Divination' name='courses'>
+                        </label></li>
+                    <li><label for='muggleStudies'>Muggle Studies
+                            <input type='checkbox' id='muggleStudies' value='Muggle Studies' name='courses'>
+                    <li><label for='acientRunes'>Study of Ancient Runes
+                            <input type='checkbox' id='acientRunes' value='Ancient Runes' name='courses'>
+                        </label></li>
+                </ul>
+                <br>
+                <label for='origin'><p>Origin Story:</p>
                     <br> <textarea id='origin' name='origin' rows='20' cols='60'></textarea>
                 </label>
 
                 <button type='submit'>Submit</button>
                 <button type='reset'>Reset</button>
 
-                <div class="wizardInfo"></div>
+                <div id="wizardInfo">Your Information</div>
             </form>
-            <hr> 
         </section>
        
         <section class="quizSection" id="houseQuiz">
@@ -448,8 +446,6 @@
                             </table>
                         </p>
 
-                        <hr>
-
                         <p>&nbsp;</p>
 
                         <input type="submit" value="Sort Me!" class="sortBTN" title="Sort Me" onclick="sortingHat()"></input>
@@ -467,30 +463,90 @@
         <p>&nbsp;</p>
         <section class="funFacts" id="funFacts">
             <h3>Research a Character</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea eius nobis, eligendi ad corporis earum
-                cupiditate ab eveniet nemo amet nulla! Perspiciatis quas esse impedit facere iste explicabo in numquam?
-            </p>
-<hr>
+            <table id="wizard">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>House</th>
+                        <th>Patronus</th>
+                        <th>Wand</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <a href="#" id="prev">Prev</a>
+            <a href="#" id="next">Next</a>   
         </section>
       
         
 
-        <section class="gallery" id="gallery">
+        <section class="galleryImg" id="galleryImg">
             <h3>Gallery</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea eius nobis, eligendi ad corporis earum
-                cupiditate ab eveniet nemo amet nulla! Perspiciatis quas esse impedit facere iste explicabo in numquam?
-            </p>
+            <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/507410/pexels-photo-507410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Cinque Terre" width="600" height="400">
+                </a>
+                <div class="desc">Hogwarts Express - <br> 
+                    Photo by Gabriela Palai from Pexels
+                    </div>
+              </div>
+              
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/3359734/pexels-photo-3359734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Forest" width="600" height="400">
+                </a>
+                <div class="desc">Hungarian Horntail - <br> 
+                    Photo by Craig Adderley from Pexels
+                    </div>
+              </div>
+              
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/3767825/pexels-photo-3767825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Northern Lights" width="600" height="400">
+                </a>
+                <div class="desc">Flying Car - <br> 
+                    Photo by Stephan Streuders from Pexels
+                    </div>
+              </div>
+              
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/7978779/pexels-photo-7978779.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">Wands - <br>
+                    Photo by RODNAE Productions from Pexels
+                    </div>
+              </div>
+
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/7978130/pexels-photo-7978130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">Potions - <br>
+                    Photo by RODNAE Productions from Pexels
+                    </div>
+              </div>
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/7978252/pexels-photo-7978252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">Potions - <br>
+                    Photo by RODNAE Productions from Pexels
+                    </div>
+              </div>
+              <div class="gallery">
+                <a target="_blank" href="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                  <img src="https://images.pexels.com/photos/7978138/pexels-photo-7978138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">Spell Book - <br>
+                    Photo by RODNAE Productions from Pexels
+                    </div>
+              </div>
         </section>
 
     </main>
-
-    <script src="main.js"></script>
-    <script src="quiz.js"></script>
-    <script src="createWizard.js"></script>
-
     <footer>Wizard World &#xb7; Fall 2021 &#xb7; &#169 Brenyn Rothwell &#xb7; <a href="challenge2/index.html">Return to
             Top</a></footer>
-
+    <script src="createWizard.js"></script>
 </body>
-
 </html>

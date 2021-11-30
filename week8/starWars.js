@@ -3,7 +3,7 @@
 
 // fetch(url)
 // .then((response) => response.json())
-// .then((data) => {
+ // .then((data) => {
 
 // for(let i=0; i < data.results.length; i++){
 //     let li = document.createElement('li');
