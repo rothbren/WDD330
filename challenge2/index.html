@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Challenge Two created by Brenyn Rothwell</title>
+        <link rel="stylesheet" href="styles.css">
+        
+        <script src="main.js"></script>
+        <script src="quiz.js"></script>
+        <script src="characters.js"></script>
+    </head>
+    
+    <body>
+        <header id="header">
+            <h1>Wizarding World</h1>
+            <h2>Celebrating 20 Years of Magic</h2>
+            
+        </header>
+        
+        <main>
+            <section class="intro" id="intro">
+                <h3>Welcome to the Wizarding World of Harry Potter</h3>
+                <p>On June 26, 1997 the first book of the Harry Potter series
+                    was published, forever changing the world. This series has 
+                    brought magic to people of all ages all over world. Join us
+                    in celebrating 20 years of magic! From Hogwarts sorting to
+                    making yourself into a wizard, we have it all. Emerse yourself
+                    in the wonderful world created by J.K.Rowling. Welcome to the magic!
+                </p>
+            </section>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Challenge Two created by Brenyn Rothwell</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <script src="main.js"></script>
-    <script src="quiz.js"></script>
-    <script src="characters.js"></script>
-</head>
-
-<body>
-    <header>
-        <h1>Wizarding World</h1>
-        <h2>celebrating 20 years of magic</h2>
-    </header>
-
-    <main>
-        <section class="sidebar">
-            <h3>Select an activity to begin your adventure</h3>
-            <li><a href="#createWizard">Turn into a Wizard</a></li>
-            <li><a href="#houseQuiz">Find Your House</a></li>
-            <li><a href="#funFacts">Fun Facts</a></li>
-            <li><a href="#gallery">Images</a></li>
-        </section>
-
-        <section class="housesOptions">
-            <ul>
-                <p>The Houses:
-                    <li>Gryffindor values courage, bravery, nerve, and chivalry, and its mascot is the lion,
-                        with
-                        scarlet red and gold color.</li> <br>
-                    <li>Hufflepuff values hard work, patience, justice, and loyalty. The house mascot is the
-                        badger, and
-                        canary yellow and black.</li><br>
-                    <li>Ravenclaw values intelligence, learning, wisdom, and wit with a mascot of the eagle and
-                        the
+            <section class="sidebar">
+                <h3>Select an activity to begin your adventure</h3>
+                <li><a href="#createWizard">Turn into a Wizard</a></li>
+                <li><a href="#houseQuiz">Find Your House</a></li>
+                <li><a href="#funFacts">Fun Facts</a></li>
+                <li><a href="#gallery">Images</a></li>
+            </section>
+            
+            <section class="housesOptions">
+                <ul>
+                    <h3>The Houses</h3>
+                    <p>
+                        <li>Gryffindor values courage, bravery, nerve, and chivalry, and its mascot is the lion,
+                            with
+                            scarlet red and gold color.</li> <br>
+                            <li>Hufflepuff values hard work, patience, justice, and loyalty. The house mascot is the
+                                badger, and
+                                canary yellow and black.</li><br>
+                                <li>Ravenclaw values intelligence, learning, wisdom, and wit with a mascot of the eagle and
+                                    the
                         color of blue and bronze.</li><br>
                     <li> Slytherin, values ambition, cunning, leadership, and resourcefulness. The house mascot
                         of
@@ -45,20 +58,10 @@
                 </p>
             </ul>
         </section>
-<section class="intro">
-    <h3>Welcome to the Wizarding World of Harry Potter</h3>
-    <p>One June 26, 1997 the first book of the Harry Potter series
-        was published, forever changing the world. This series has 
-        brought magic to people of all ages all over world. Join us
-        in celebrating 20 years of magic! From Hogwarts sorting to
-        making yourself into a wizard, we have it all. Emerse yourself
-        in the wonderful world created by J.K.Rowling. Welcome to the magic!
-    </p>
-</section>
         <section class="createWizard" id="createWizard">
-
+<h3>Turn into a witch or wizard!</h3>
             <form id='makeWizard'>
-                <h3>Turn into a witch or wizard!</h3>
+                
                 <label for='wizardName'>Name:
                     <input type='text' id='wizardName' name='wizardName' autofocus placeholder='Your wizard name'
                         maxlength=32 required>
@@ -157,6 +160,7 @@
             </form>
         </section>
         <br>
+
         <section class="quizSection" id="houseQuiz">
             <table class="houseQuiz" width="760" align="center">
                 <tr>
@@ -514,37 +518,28 @@
                         <td>Lumos</td>
                     </tr>
                 </table>
-            </p>
+            </p>   
+        </form>
 
-            <p>&nbsp;</p>
-
-            <input type="submit" value="Sort Me!" class="sortBTN" title="Sort Me" onclick="sortingHat()"></input>
-
-            </form>
+        <input type="submit" value="Sort Me!" class="sortBTN" title="Sort Me" onclick="sortingHat()"></input>
             <div id="sortingResults"></div>
-
-            
-
         </section>
-        <p>&nbsp;</p>
+        
         <section class="funFacts" id="funFacts">
             <h3>Research a Character</h3>
-            <table id="wizard">
+            <table id="wizardCharacter">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>House</th>
-                        <th>Patronus</th>
-                        <th>Wand</th>
+                        <th>Name:</th>
+                        <th>House:</th>
+                        <th>Patronus:</th>
+                        <th>Wand:</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
-            <a href="#" id="prev">Prev</a>
-            <a href="#" id="next">Next</a>
+
         </section>
-
-
 
         <section class="galleryImg" id="galleryImg">
             <h3>Gallery</h3>
@@ -622,10 +617,20 @@
                     Photo by RODNAE Productions from Pexels
                 </div>
             </div>
+            <div class="gallery">
+                <a target="_blank"
+                    href="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        alt="Mountains" width="600" height="400">
+                </a>
+                <div class="desc">Library - <br>
+                    Photo by Janko Ferlic from Pexels
+                </div>
+            </div>
         </section>
 
     </main>
-    <footer>Wizard World &#xb7; Fall 2021 &#xb7; &#169 Brenyn Rothwell &#xb7; <a href="challenge2/index.html">Return to
+    <footer>Wizard World &#xb7; Fall 2021 &#xb7; &#169 Brenyn Rothwell &#xb7; <a href="#header">Return to
             Top</a></footer>
     <script src="createWizard.js"></script>
 </body>

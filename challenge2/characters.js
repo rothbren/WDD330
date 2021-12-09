@@ -16,34 +16,34 @@ function getJSON(url) {
   function getWizard(url) {
     return getJSON(url);
   }
-  //  View cod
-
+  //  View code
   function renderWizardList(wizard, wizardListElement) {
-      //add a child to wizardListElement
-      
     // I decided to use a table to display my list of wizard. The wizardList Element is that table and it has 2 children: thead and tbody...we need to put our wizard into tbody...so I reference the second child.
     const list = wizardListElement.children[1];
     list.innerHTML = "";
     //loop through the wizard
-    wizard.forEach(function (wizard) {
+    wizard.forEach(function(w) {
       //console.log(wizard);
       //create elements for list...tr
-      let listItem = document.createElement("tr");
-      listItem.innerHTML = `
-          <td><a href="${wizard.url}">${wizard.name}</a></td>
-          <td>${wizard.house}</td>
-          <td>${wizard.patronus}</td>
-          <td>${wizard.wand}</td>
+      if (w.house.length > 0){
+        
+          let listItem = document.createElement("tr");
+          listItem.innerHTML = `
+          <td>${w.name}</td>
+          <td>${w.house}</td>
+          <td>${w.patronus}</td>
+          <td>${w.wand.wood} ${w.wand.core} ${w.wand.length}</td>
           `;
-  
-      listItem.addEventListener("click", function (event) {
-        //when clicked the default link behavior should be stopped, and the wizard details function should be called...passing the value of the href attribute in
-        event.preventDefault();
-        getWizardDetails(wizard.url);
-      });
+          
+          listItem.addEventListener("click", function (event) {
+              //when clicked the default link behavior should be stopped, and the wizard details function should be called...passing the value of the href attribute in
+              event.preventDefault();
+              getWizardDetails(wizard.url);
+            });
+            list.appendChild(listItem);
+        }
   
       //add the list item to the list
-      list.appendChild(listItem);
     });
   }
   // need to write the code to render the details to HTML
@@ -55,11 +55,9 @@ function getJSON(url) {
   function showWizard(url = "http://hp-api.herokuapp.com/api/characters") {
     getWizard(url).then(function (data) {
       console.log(data);
-      const results = data.results;
-  
-      //get the list element
-      const wizardListElement = document.getElementById("wizard");
-      renderWizardList(results, wizardListElement);
+
+      const wizardListElement = document.getElementById("wizardCharacter");
+      renderWizardList(data, wizardListElement);
   
       // enable the next and prev buttons.
       if (data.next) {
