@@ -1,12 +1,19 @@
-
 body {
     padding: 40px;
-    margin: 40px;
+    margin: auto;
     background-color: lavender;
+        max-width: 500px;
 }
 
-h1 {
-    border-bottom: 2px solid black;
+a {
+    color: black;
+}
+
+a:hover {
+    background-color: purple;
+    color: white;
+    text-decoration: underline;
+    padding: 3px;
 }
 
 h1, h2 {
@@ -18,32 +25,12 @@ p {
     font-size: 14px;
 }
 
-footer {
+footer, header {
     margin: auto;
     padding: 10px;
-    color: white;
+    color: navy;
     text-align: center;
     background-color: rgb(187, 187, 207);
 }
 
-.allFiles {
-    padding: 10px;
-    width: 25%;
-    background: #3d467a;
-    color: white;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-  }
-  
-  .allFiles:hover {
-    background-color: white;
-    color: #3d467a;
-  }
 
-  a {
-      text-decoration: none;
-  }
